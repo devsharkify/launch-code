@@ -7,11 +7,11 @@ import { CommandPalette } from "./CommandPalette";
 const isSearchPage = (pathname) => pathname === "/search";
 
 const NAV_LINKS = [
-  { label: "AI Models", slug: "ai-models", path: "/models" },
+  { label: "Launches", slug: "launches", path: "/launches" },
+  { label: "Models", slug: "ai-models", path: "/models" },
   { label: "Funding", slug: "funding", path: "/funding" },
   { label: "Video AI", slug: "video-ai" },
   { label: "Agents", slug: "agents" },
-  { label: "Research", slug: "research" },
 ];
 
 const TICKER_ITEMS = [

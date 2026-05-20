@@ -4,10 +4,10 @@ import { Search, ArrowRight, Cpu, DollarSign, Video, Zap, BookOpen, X } from "lu
 import { AppContext } from "../App";
 
 const QUICK_LINKS = [
+  { icon: Zap, label: "Launch Radar", sub: "Every model, API & product launch tracked", path: "/launches" },
   { icon: Cpu, label: "AI Model Leaderboard", sub: "Benchmarks: SWE-bench, MMMU, MATH…", path: "/models" },
   { icon: DollarSign, label: "Funding Wire", sub: "$4.2B tracked · 15 rounds in 2026", path: "/funding" },
   { icon: Video, label: "Video AI", sub: "Runway, Pika, Sora, Veo — all coverage", path: "/?cat=video-ai" },
-  { icon: Zap, label: "AI Agents", sub: "Autonomous agent ecosystem", path: "/?cat=agents" },
   { icon: BookOpen, label: "Research", sub: "Papers, benchmarks, arxiv breakdowns", path: "/?cat=research" },
 ];
 

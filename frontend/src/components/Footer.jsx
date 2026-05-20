@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Twitter, Linkedin, Github, Youtube, Zap } from "lucide-react";
 
 const COVERAGE = [
-  { label: "AI Models", href: "/?cat=ai-models" },
+  { label: "Launch Radar", href: "/launches" },
+  { label: "AI Models", href: "/models" },
+  { label: "Funding Wire", href: "/funding" },
   { label: "Video AI", href: "/?cat=video-ai" },
   { label: "AI Agents", href: "/?cat=agents" },
-  { label: "Generative AI", href: "/?cat=generative-ai" },
   { label: "Foundation Models", href: "/?cat=foundation-models" },
-  { label: "Computer Vision", href: "/?cat=vision" },
-  { label: "AI Funding", href: "/?cat=funding" },
   { label: "Research", href: "/?cat=research" },
   { label: "Open Source AI", href: "/?cat=open-source" },
   { label: "AI Infrastructure", href: "/?cat=infra" },
+  { label: "Computer Vision", href: "/?cat=vision" },
 ];
 
 const INSIDE = [
