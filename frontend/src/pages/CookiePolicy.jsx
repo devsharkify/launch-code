@@ -20,7 +20,7 @@ function Section({ title, children, darkMode }) {
 
 function Para({ children }) {
   return (
-    <p className="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300 mb-3">
+    <p className="text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3] mb-3">
       {children}
     </p>
   );
@@ -41,7 +41,7 @@ function BulletList({ items }) {
   return (
     <ul className="space-y-1 mb-3 pl-1">
       {items.map((item, i) => (
-        <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-600 dark:text-slate-300">
+        <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3]">
           <span
             className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px]"
             style={{ backgroundColor: BRAND }}
@@ -65,7 +65,7 @@ export default function CookiePolicy() {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-slate-100" : "bg-white text-slate-800"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-[#f0f0f0]" : "bg-white text-[#f0f0f0]"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}
@@ -73,8 +73,8 @@ export default function CookiePolicy() {
           <Link to="/" className={`hover:underline ${darkMode ? "text-blue-400" : "text-[#F26B1F]"}`}>
             Home
           </Link>
-          <span className={darkMode ? "text-slate-500" : "text-slate-400"}>/</span>
-          <span className={darkMode ? "text-slate-300" : "text-slate-600"}>Cookie Policy</span>
+          <span className={darkMode ? "text-[#737373]" : "text-[#555]"}>/</span>
+          <span className={darkMode ? "text-[#a3a3a3]" : "text-[#737373]"}>Cookie Policy</span>
         </nav>
 
         {/* Header */}
@@ -86,15 +86,15 @@ export default function CookiePolicy() {
             Cookie Policy
           </h1>
           <div className="w-16 h-[3px] rounded mb-5" style={{ backgroundColor: BRAND }} />
-          <p className="text-[13px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-widest">
+          <p className="text-[13px] text-[#555] dark:text-[#737373] font-medium uppercase tracking-widest">
             Last Updated: May 2026
           </p>
         </header>
 
         <Para>
-          This Cookie Policy explains how Mint Street (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+          This Cookie Policy explains how LaunchCode (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
           &ldquo;our&rdquo;) uses cookies and similar tracking technologies when you visit
-          themintstreet.in. We want to be transparent about the data we collect, why we collect
+          thelaunchcode.ai. We want to be transparent about the data we collect, why we collect
           it, and the choices available to you. By continuing to use our website, you consent to the
           use of cookies as described in this policy.
         </Para>
@@ -125,7 +125,7 @@ export default function CookiePolicy() {
 
           <SubHeading darkMode={darkMode}>First-Party vs. Third-Party Cookies</SubHeading>
           <Para>
-            First-party cookies are set directly by Mint Street and are used solely to
+            First-party cookies are set directly by LaunchCode and are used solely to
             improve your experience on our site. Third-party cookies are placed by external services
             that we use, such as Google Analytics, to help us understand how our content is consumed.
             Third-party cookies are governed by the privacy policies of those respective providers.
@@ -203,7 +203,7 @@ export default function CookiePolicy() {
 
           <SubHeading darkMode={darkMode}>Embedded Content</SubHeading>
           <Para>
-            Articles on Mint Street may include embedded content from third-party platforms
+            Articles on LaunchCode may include embedded content from third-party platforms
             such as YouTube, Twitter/X, or LinkedIn. These embedded resources may set their own
             cookies when you interact with them. We recommend reviewing the cookie policies of these
             platforms separately if you have concerns about the data they collect.
@@ -259,20 +259,20 @@ export default function CookiePolicy() {
         {/* 5. Cookie Table */}
         <Section title="5. Cookie Reference Table" darkMode={darkMode}>
           <Para>
-            The following table lists the primary cookies used on themintstreet.in, their
+            The following table lists the primary cookies used on thelaunchcode.ai, their
             purpose, and how long they are retained on your device.
           </Para>
-          <div className="overflow-x-auto mt-4 mb-4 rounded-lg border border-slate-200 dark:border-slate-700">
+          <div className="overflow-x-auto mt-4 mb-4 rounded-lg border border-[#1f1f1f] dark:border-[#1f1f1f]">
             <table className="w-full text-[14px] border-collapse">
               <thead>
-                <tr className={darkMode ? "bg-slate-800" : "bg-slate-100"}>
-                  <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                <tr className={darkMode ? "bg-[#0d0d0d]" : "bg-[#111]"}>
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
                     Cookie Name
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f]">
                     Purpose
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
                     Duration
                   </th>
                 </tr>
@@ -281,17 +281,17 @@ export default function CookiePolicy() {
                 {cookieTableRows.map((row, i) => (
                   <tr
                     key={i}
-                    className={`border-b last:border-0 border-slate-200 dark:border-slate-700 ${
+                    className={`border-b last:border-0 border-[#1f1f1f] dark:border-[#1f1f1f] ${
                       i % 2 === 0
                         ? darkMode ? "bg-[#1C1410]" : "bg-white"
-                        : darkMode ? "bg-slate-800/50" : "bg-slate-50"
+                        : darkMode ? "bg-[#0d0d0d]/50" : "bg-[#111]"
                     }`}
                   >
-                    <td className="px-4 py-3 font-mono text-[13px] text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                    <td className="px-4 py-3 font-mono text-[13px] text-[#a3a3a3] dark:text-[#a3a3a3] whitespace-nowrap">
                       {row.name}
                     </td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{row.purpose}</td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300 whitespace-nowrap">{row.duration}</td>
+                    <td className="px-4 py-3 text-[#737373] dark:text-[#a3a3a3]">{row.purpose}</td>
+                    <td className="px-4 py-3 text-[#737373] dark:text-[#a3a3a3] whitespace-nowrap">{row.duration}</td>
                   </tr>
                 ))}
               </tbody>
@@ -312,7 +312,7 @@ export default function CookiePolicy() {
         {/* Contact */}
         <section
           className={`rounded-xl p-6 mb-10 border ${
-            darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
+            "bg-[#0d0d0d] border-[#1f1f1f]"
           }`}
         >
           <h2
@@ -321,19 +321,19 @@ export default function CookiePolicy() {
           >
             Questions About Cookies?
           </h2>
-          <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-2">
+          <p className="text-[14px] text-[#737373] dark:text-[#555] mb-2">
             If you have any questions about our use of cookies or this Cookie Policy, please
             contact our privacy team:
           </p>
-          <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-1">
-            Mint Street, Hyderabad, Telangana, India
+          <p className="text-[14px] text-[#737373] dark:text-[#555] mb-1">
+            LaunchCode, Hyderabad, Telangana, India
           </p>
           <a
-            href="mailto:privacy@themintstreet.in"
+            href="mailto:privacy@thelaunchcode.ai"
             className="text-[14px] font-medium hover:underline"
             style={{ color: BRAND }}
           >
-            privacy@themintstreet.in
+            privacy@thelaunchcode.ai
           </a>
         </section>
 

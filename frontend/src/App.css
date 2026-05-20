@@ -54,6 +54,10 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 @keyframes pulse-brand {
   0%,100% { box-shadow: 0 0 0 0 rgba(124,58,237,0.3); }
   50%      { box-shadow: 0 0 0 8px rgba(124,58,237,0); }

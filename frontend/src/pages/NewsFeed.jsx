@@ -7,6 +7,7 @@ import { NewsCard } from "../components/NewsCard";
 import { FeaturedCard, CompactCard } from "../components/FeaturedCard";
 import { ModelLeaderboard } from "../components/ModelLeaderboard";
 import { FundingWire } from "../components/FundingWire";
+import { TrendingTopics } from "../components/TrendingTopics";
 import { Hero } from "../components/Hero";
 import { MOCK_ARTICLES } from "../data/mockArticles";
 import { Loader2, Newspaper, X, Search } from "lucide-react";
@@ -269,6 +270,7 @@ export default function NewsFeed() {
 
               {/* Sidebar */}
               <div className="lg:w-72 xl:w-80 shrink-0 space-y-4">
+                <TrendingTopics />
                 <ModelLeaderboard />
                 <FundingWire />
 

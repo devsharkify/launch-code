@@ -1,14 +1,15 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Bookmark, Layers, Cpu } from "lucide-react";
+import { Home, Bookmark, Cpu, Video, DollarSign } from "lucide-react";
 
 export const BottomNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const navItems = [
-    { path: "/", icon: Home, label: "Home" },
-    { path: "/swipe", icon: Layers, label: "Shorts" },
-    { path: "/videos", icon: Cpu, label: "Videos" },
+    { path: "/", icon: Home, label: "Feed" },
+    { path: "/models", icon: Cpu, label: "Models" },
+    { path: "/funding", icon: DollarSign, label: "Funding" },
+    { path: "/videos", icon: Video, label: "Videos" },
     { path: "/saved", icon: Bookmark, label: "Saved" },
   ];
 

@@ -5,7 +5,7 @@ import { AppContext } from "../App";
 function Section({ title, children }) {
   return (
     <section className="mb-8">
-      <h2 className="font-display text-[18px] font-bold mt-8 mb-3 text-ink dark:text-cream">
+      <h2 className="font-display text-[18px] font-bold mt-8 mb-3 text-[#f0f0f0] text-[#f0f0f0]">
         {title}
       </h2>
       {children}
@@ -15,7 +15,7 @@ function Section({ title, children }) {
 
 function Para({ children }) {
   return (
-    <p className="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300 mb-3">
+    <p className="text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3] mb-3">
       {children}
     </p>
   );
@@ -27,9 +27,9 @@ function BulletList({ items }) {
       {items.map((item, i) => (
         <li
           key={i}
-          className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-600 dark:text-slate-300"
+          className="flex items-start gap-3 text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3]"
         >
-          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px] bg-mint" />
+          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px] bg-[#7c3aed]" />
           {item}
         </li>
       ))}
@@ -42,16 +42,16 @@ export default function PrivacyPolicy() {
   const navigate = useNavigate();
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-ink text-cream" : "bg-paper text-ink"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#080808] text-[#f0f0f0]" : "bg-[#080808] text-[#f0f0f0]"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] mb-8" aria-label="Breadcrumb">
-          <Link to="/" className="hover:underline text-mint">
+          <Link to="/" className="hover:underline text-[#7c3aed]">
             Home
           </Link>
-          <span className={darkMode ? "text-slate-500" : "text-slate-400"}>/</span>
-          <span className={darkMode ? "text-slate-300" : "text-slate-600"}>Privacy</span>
+          <span className={darkMode ? "text-[#737373]" : "text-[#555]"}>/</span>
+          <span className={darkMode ? "text-[#a3a3a3]" : "text-[#737373]"}>Privacy</span>
         </nav>
 
         {/* Header */}
@@ -59,24 +59,24 @@ export default function PrivacyPolicy() {
           <h1 className="font-display font-bold text-[36px] sm:text-[44px] leading-tight mb-4">
             Privacy Policy
           </h1>
-          <div className="w-16 h-[3px] rounded mb-5 bg-mint" />
-          <p className="text-[13px] text-slate-400 dark:text-slate-500 font-medium uppercase tracking-widest">
+          <div className="w-16 h-[3px] rounded mb-5 bg-[#7c3aed]" />
+          <p className="text-[13px] text-[#555] dark:text-[#737373] font-medium uppercase tracking-widest">
             Last updated: May 2026
           </p>
         </header>
 
         <Para>
           This is the plain-English version of how (&ldquo;Mint
-          Street,&rdquo; &ldquo;we&rdquo;) handles your data when you read us at mintstreet.in,
+          Street,&rdquo; &ldquo;we&rdquo;) handles your data when you read us at launchcode.ai,
           subscribe to our newsletters, or contact the newsroom. We try to collect as little as
           possible and explain the rest honestly. If anything below is unclear, write to
-          legal@mintstreet.in.
+          legal@launchcode.ai.
         </Para>
 
         {/* 1. Information We Collect */}
         <Section title="1. Information we collect">
           <Para>
-            Most of Mint Street can be read without an account. When you do interact with us, here
+            Most of LaunchCode can be read without an account. When you do interact with us, here
             is what we end up with:
           </Para>
           <BulletList items={[
@@ -110,7 +110,7 @@ export default function PrivacyPolicy() {
             like &ldquo;this piece was read for an average of four minutes on mobile.&rdquo; You
             can block any of them in your browser; the site will still work, but personalisation
             will reset on every visit. For the long version, see our{" "}
-            <Link to="/cookie-policy" className="underline text-mint">
+            <Link to="/cookie-policy" className="underline text-[#7c3aed]">
               Cookie Policy
             </Link>
             .
@@ -147,8 +147,8 @@ export default function PrivacyPolicy() {
           ]} />
           <Para>
             Send any of these requests to{" "}
-            <a href="mailto:legal@mintstreet.in" className="underline text-mint">
-              legal@mintstreet.in
+            <a href="mailto:legal@launchcode.ai" className="underline text-[#7c3aed]">
+              legal@launchcode.ai
             </a>
             . We respond within 30 days, faster where we can.
           </Para>
@@ -157,9 +157,9 @@ export default function PrivacyPolicy() {
         {/* 6. Children */}
         <Section title="6. Children">
           <Para>
-            Mint Street is written for adults working in or near the startup economy. We do not
+            LaunchCode is written for adults working in or near the startup economy. We do not
             knowingly collect data from anyone under 18. If you believe a child has signed up,
-            email legal@mintstreet.in and we will remove the account.
+            email legal@launchcode.ai and we will remove the account.
           </Para>
         </Section>
 
@@ -177,8 +177,8 @@ export default function PrivacyPolicy() {
         <Section title="8. Contact">
           <Para>
             Privacy questions, data requests, complaints &mdash; send them all to{" "}
-            <a href="mailto:legal@mintstreet.in" className="underline text-mint">
-              legal@mintstreet.in
+            <a href="mailto:legal@launchcode.ai" className="underline text-[#7c3aed]">
+              legal@launchcode.ai
             </a>
             . Our registered office is below.
           </Para>
@@ -187,13 +187,13 @@ export default function PrivacyPolicy() {
         {/* Contact card */}
         <section
           className={`rounded-xl p-6 mb-10 border ${
-            darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
+            "bg-[#0d0d0d] border-[#1f1f1f]"
           }`}
         >
-          <h2 className="font-display text-[16px] font-bold mb-3 text-ink dark:text-cream">
+          <h2 className="font-display text-[16px] font-bold mb-3 text-[#f0f0f0] text-[#f0f0f0]">
             Contact us about privacy
           </h2>
-          <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-2">
+          <p className="text-[14px] text-[#737373] dark:text-[#555] mb-2">
            
             <br />
             Plot 14, HUDA Tech Park, Madhapur
@@ -201,17 +201,17 @@ export default function PrivacyPolicy() {
             Hyderabad &ndash; 500081, India
           </p>
           <a
-            href="mailto:legal@mintstreet.in"
-            className="text-[14px] font-medium hover:underline text-mint"
+            href="mailto:legal@launchcode.ai"
+            className="text-[14px] font-medium hover:underline text-[#7c3aed]"
           >
-            legal@mintstreet.in
+            legal@launchcode.ai
           </a>
         </section>
 
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-[14px] font-medium hover:underline text-mint"
+          className="inline-flex items-center gap-2 text-[14px] font-medium hover:underline text-[#7c3aed]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />

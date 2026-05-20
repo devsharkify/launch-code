@@ -1,243 +1,133 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AppContext } from "../App";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Mail, Twitter, Linkedin, ChevronLeft, Zap } from "lucide-react";
+
+const CONTACTS = [
+  { label: "Newsroom", email: "editor@launchcode.ai" },
+  { label: "Advertising", email: "advertise@launchcode.ai" },
+  { label: "Careers", email: "careers@launchcode.ai" },
+  { label: "Legal", email: "legal@launchcode.ai" },
+];
+
+const SOCIALS = [
+  { label: "X / Twitter", handle: "@launchcode_ai", href: "https://twitter.com/launchcode_ai", Icon: Twitter },
+  { label: "LinkedIn", handle: "/company/launchcode-ai", href: "https://linkedin.com/company/launchcode-ai", Icon: Linkedin },
+];
+
+const inputClass = "w-full rounded-md px-3 py-2 text-[13px] border border-[#262626] bg-[#111] text-[#f0f0f0] placeholder:text-[#404040] focus:border-[#7c3aed] focus:ring-1 focus:ring-[#7c3aed] outline-none transition-colors";
 
 export default function ContactPage() {
-  const { darkMode } = useContext(AppContext);
   const navigate = useNavigate();
-
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [toast, setToast] = useState("");
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: wire up to backend / mail relay. For now, stubbed.
-    setToast("Thanks - we'll get back within 48 hours.");
+    setSent(true);
     setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setToast(""), 4000);
+    setTimeout(() => setSent(false), 5000);
   };
 
-  const inputBase = `w-full rounded-lg px-3 py-2 text-[14px] border focus:outline-none focus:ring-2 focus:ring-mint/40 ${
-    darkMode
-      ? "bg-slate-800 border-slate-700 text-slate-100 placeholder-slate-500"
-      : "bg-white border-slate-200 text-slate-800 placeholder-slate-400"
-  }`;
-
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-ink text-cream" : "bg-paper text-ink"}`}>
-      <div className="max-w-3xl mx-auto px-4 py-10">
+    <div className="min-h-screen bg-[#080808]">
+      <div className="max-w-3xl mx-auto px-4 py-12">
 
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[13px] mb-8" aria-label="Breadcrumb">
-          <Link to="/" className="hover:underline text-mint">
-            Home
-          </Link>
-          <span className={darkMode ? "text-slate-500" : "text-slate-400"}>/</span>
-          <span className={darkMode ? "text-slate-300" : "text-slate-600"}>Contact</span>
-        </nav>
+        {/* Back */}
+        <button onClick={() => navigate(-1)} className="flex items-center gap-1 text-[#404040] hover:text-[#f0f0f0] transition-colors mb-8 text-[13px]">
+          <ChevronLeft size={15} /> Back
+        </button>
 
-        {/* Heading */}
-        <header className="mb-10">
-          <h1 className="font-display font-bold text-[36px] sm:text-[44px] leading-tight mb-4">
-            Contact Mint Street
+        {/* Header */}
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded bg-[#7c3aed] flex items-center justify-center">
+              <Mail size={12} className="text-white" />
+            </div>
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#7c3aed] font-mono">Contact</span>
+          </div>
+          <h1 className="text-[32px] md:text-[40px] font-bold text-[#f0f0f0] tracking-tight leading-tight mb-3">
+            Get in touch
           </h1>
-          <div className="w-16 h-[3px] rounded mb-5 bg-mint" />
-          <p className="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300">
-            Tip, pitch, complaint or compliment &mdash; we read everything. The fastest route is
-            email, but the form below lands in the same inbox.
+          <p className="text-[15px] text-[#737373] leading-relaxed">
+            Tips, pitches, complaints, or compliments — we read everything. Fastest route is email.
           </p>
-        </header>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {/* Left: contact details */}
-          <section
-            className={`rounded-xl p-6 border ${
-              darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
-            }`}
-          >
-            <h2 className="font-display text-[16px] font-bold mb-4 text-ink dark:text-cream">
-              Reach us
-            </h2>
-
-            <div className="space-y-3 text-[14px] text-slate-600 dark:text-slate-300">
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Newsroom
-                </span>
-                <a href="mailto:editor@mintstreet.in" className="hover:underline text-mint">
-                  editor@mintstreet.in
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Advertising
-                </span>
-                <a href="mailto:advertise@mintstreet.in" className="hover:underline text-mint">
-                  advertise@mintstreet.in
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Careers
-                </span>
-                <a href="mailto:careers@mintstreet.in" className="hover:underline text-mint">
-                  careers@mintstreet.in
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Legal
-                </span>
-                <a href="mailto:legal@mintstreet.in" className="hover:underline text-mint">
-                  legal@mintstreet.in
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Phone
-                </span>
-                +91 40 4242 0000
-              </p>
-              <p>
-                <span className="font-semibold text-slate-700 dark:text-slate-200 block">
-                  Office
-                </span>
-               
-                <br />
-                Plot 14, HUDA Tech Park, Madhapur
-                <br />
-                Hyderabad &ndash; 500081
-                <br />
-                Also in Bengaluru
-              </p>
-            </div>
-
-            <div className="mt-5 pt-5 border-t border-slate-200 dark:border-slate-700">
-              <h3 className="text-[13px] font-bold mb-2 text-slate-700 dark:text-slate-200 uppercase tracking-wider">
-                Follow
-              </h3>
-              <div className="flex flex-wrap gap-3 text-[13px]">
-                <a
-                  href="https://twitter.com/mintstreet_in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-mint"
-                >
-                  @mintstreet_in
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/mintstreet"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-mint"
-                >
-                  /company/mintstreet
-                </a>
-                <a
-                  href="https://instagram.com/mintstreet.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-mint"
-                >
-                  @mintstreet.in
-                </a>
-              </div>
-            </div>
-          </section>
-
-          {/* Right: form */}
-          <section
-            className={`rounded-xl p-6 border ${
-              darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
-            }`}
-          >
-            <h2 className="font-display text-[16px] font-bold mb-4 text-ink dark:text-cream">
-              Send a note
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div>
-                <label className="block text-[13px] font-medium mb-1 text-slate-700 dark:text-slate-200">
-                  Name
-                </label>
-                <input
-                  name="name"
-                  type="text"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className={inputBase}
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-[13px] font-medium mb-1 text-slate-700 dark:text-slate-200">
-                  Email
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className={inputBase}
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div>
-                <label className="block text-[13px] font-medium mb-1 text-slate-700 dark:text-slate-200">
-                  Subject
-                </label>
-                <input
-                  name="subject"
-                  type="text"
-                  value={form.subject}
-                  onChange={handleChange}
-                  required
-                  className={inputBase}
-                  placeholder="What is this about?"
-                />
-              </div>
-              <div>
-                <label className="block text-[13px] font-medium mb-1 text-slate-700 dark:text-slate-200">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  className={inputBase}
-                  placeholder="Tell us more…"
-                />
-              </div>
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-[14px] font-semibold text-white bg-mint hover:opacity-90 transition"
-              >
-                Send message
-              </button>
-              {toast && (
-                <p className="text-[13px] mt-2 text-mint font-medium">{toast}</p>
-              )}
-            </form>
-          </section>
         </div>
 
-        {/* Back button */}
-        <button
-          onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-[14px] font-medium hover:underline text-mint"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-          Go back
-        </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          {/* Contact details */}
+          <div className="space-y-4">
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#404040] mb-4">Reach us</h2>
+              <div className="space-y-3">
+                {CONTACTS.map(({ label, email }) => (
+                  <div key={label}>
+                    <div className="text-[11px] font-semibold text-[#737373] uppercase tracking-wide mb-0.5">{label}</div>
+                    <a href={`mailto:${email}`} className="text-[13px] text-[#a78bfa] hover:text-[#7c3aed] transition-colors">
+                      {email}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5">
+              <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#404040] mb-4">Follow</h2>
+              <div className="space-y-3">
+                {SOCIALS.map(({ label, handle, href, Icon }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-[13px] text-[#737373] hover:text-[#f0f0f0] transition-colors group">
+                    <Icon size={14} className="group-hover:text-[#7c3aed] transition-colors" />
+                    <span>{handle}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <Zap size={12} className="text-[#7c3aed]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#404040]">HQ</span>
+              </div>
+              <p className="text-[13px] text-[#737373] leading-relaxed">
+                San Francisco, CA<br />
+                Remote-first · AI-native
+              </p>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="bg-[#0d0d0d] border border-[#1f1f1f] rounded-xl p-5">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#404040] mb-4">Send a note</h2>
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div>
+                <label className="block text-[12px] font-medium text-[#737373] mb-1">Name</label>
+                <input name="name" type="text" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required className={inputClass} placeholder="Your name" />
+              </div>
+              <div>
+                <label className="block text-[12px] font-medium text-[#737373] mb-1">Email</label>
+                <input name="email" type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required className={inputClass} placeholder="you@startup.ai" />
+              </div>
+              <div>
+                <label className="block text-[12px] font-medium text-[#737373] mb-1">Subject</label>
+                <input name="subject" type="text" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} required className={inputClass} placeholder="What is this about?" />
+              </div>
+              <div>
+                <label className="block text-[12px] font-medium text-[#737373] mb-1">Message</label>
+                <textarea name="message" rows={5} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} required className={inputClass} placeholder="Tell us more…" />
+              </div>
+              <button type="submit"
+                className="w-full bg-[#7c3aed] hover:bg-[#6d28d9] text-white py-2.5 rounded-md text-[13px] font-semibold transition-all hover:shadow-[0_0_12px_rgba(124,58,237,0.4)]">
+                Send message
+              </button>
+              {sent && (
+                <p className="text-[12px] text-[#22c55e] font-medium text-center">
+                  Thanks — we'll respond within 48 hours.
+                </p>
+              )}
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

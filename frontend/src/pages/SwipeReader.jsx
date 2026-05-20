@@ -104,10 +104,10 @@ export function ShortsPlayer() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center z-40" style={{ top: "56px", bottom: "64px" }}>
+      <div className="fixed inset-0 bg-[#080808] flex items-center justify-center z-40" style={{ top: "56px", bottom: "64px" }}>
         <div className="text-center">
-          <div className="w-10 h-10 border-3 border-red-600 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-white/50 text-sm mt-4">Loading Shorts...</p>
+          <div className="w-10 h-10 border-2 border-[#7c3aed] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-[#404040] text-sm mt-4 font-mono">Loading Shorts...</p>
         </div>
       </div>
     );
@@ -115,11 +115,11 @@ export function ShortsPlayer() {
 
   if (shorts.length === 0) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center z-40" style={{ top: "56px", bottom: "64px" }}>
+      <div className="fixed inset-0 bg-[#080808] flex items-center justify-center z-40" style={{ top: "56px", bottom: "64px" }}>
         <div className="text-center">
-          <Youtube size={48} className="text-white/30 mx-auto mb-3" />
-          <p className="text-white/60">No shorts available</p>
-          <button onClick={fetchShorts} className="mt-4 flex items-center gap-2 text-red-500 text-sm mx-auto">
+          <Youtube size={48} className="text-[#333] mx-auto mb-3" />
+          <p className="text-[#555] text-sm mb-4">No shorts available</p>
+          <button onClick={fetchShorts} className="flex items-center gap-2 text-[#7c3aed] text-sm mx-auto hover:text-[#a78bfa] transition-colors">
             <RefreshCw size={14} /> Retry
           </button>
         </div>

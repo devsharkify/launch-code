@@ -4,7 +4,7 @@ import { AppContext } from "../App";
 
 function Para({ children }) {
   return (
-    <p className="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300 mb-3">
+    <p className="text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3] mb-3">
       {children}
     </p>
   );
@@ -13,7 +13,7 @@ function Para({ children }) {
 function Section({ title, children }) {
   return (
     <section className="mb-8">
-      <h2 className="font-display text-[18px] font-bold mt-8 mb-3 text-ink dark:text-cream">
+      <h2 className="font-display text-[18px] font-bold mt-8 mb-3 text-[#f0f0f0] text-[#f0f0f0]">
         {title}
       </h2>
       {children}
@@ -25,14 +25,14 @@ function AdCard({ title, description, icon, darkMode }) {
   return (
     <div
       className={`rounded-xl p-5 border ${
-        darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
+        "bg-[#0d0d0d] border-[#1f1f1f]"
       }`}
     >
       <div className="text-[24px] mb-3">{icon}</div>
-      <h3 className="font-display text-[16px] font-bold mb-2 text-ink dark:text-cream">
+      <h3 className="font-display text-[16px] font-bold mb-2 text-[#f0f0f0] text-[#f0f0f0]">
         {title}
       </h3>
-      <p className="text-[14px] leading-relaxed text-slate-500 dark:text-slate-400">
+      <p className="text-[14px] leading-relaxed text-[#737373] dark:text-[#555]">
         {description}
       </p>
     </div>
@@ -45,9 +45,9 @@ function BulletList({ items }) {
       {items.map((item, i) => (
         <li
           key={i}
-          className="flex items-start gap-3 text-[15px] leading-relaxed text-slate-600 dark:text-slate-300"
+          className="flex items-start gap-3 text-[15px] leading-relaxed text-[#737373] dark:text-[#a3a3a3]"
         >
-          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px] bg-mint" />
+          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px] bg-[#7c3aed]" />
           {item}
         </li>
       ))}
@@ -64,7 +64,7 @@ export default function AdvertisePage() {
       icon: "@",
       title: "Newsletter Sponsorship",
       description:
-        "A clearly-marked slot at the top or middle of the Mint Street daily, delivered each morning to founders, investors and operators who actually open their inbox before scrolling X.",
+        "A clearly-marked slot at the top or middle of the LaunchCode daily, delivered each morning to founders, investors and operators who actually open their inbox before scrolling X.",
     },
     {
       icon: "#",
@@ -81,37 +81,37 @@ export default function AdvertisePage() {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-ink text-cream" : "bg-paper text-ink"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#080808] text-[#f0f0f0]" : "bg-[#080808] text-[#f0f0f0]"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] mb-8" aria-label="Breadcrumb">
-          <Link to="/" className="hover:underline text-mint">
+          <Link to="/" className="hover:underline text-[#7c3aed]">
             Home
           </Link>
-          <span className={darkMode ? "text-slate-500" : "text-slate-400"}>/</span>
-          <span className={darkMode ? "text-slate-300" : "text-slate-600"}>Advertise</span>
+          <span className={darkMode ? "text-[#737373]" : "text-[#555]"}>/</span>
+          <span className={darkMode ? "text-[#a3a3a3]" : "text-[#737373]"}>Advertise</span>
         </nav>
 
         {/* Hero */}
         <header className="mb-10">
           <h1 className="font-display font-bold text-[36px] sm:text-[44px] leading-tight mb-4">
-            Advertise on Mint Street
+            Advertise on LaunchCode
           </h1>
-          <div className="w-16 h-[3px] rounded mb-5 bg-mint" />
+          <div className="w-16 h-[3px] rounded mb-5 bg-[#7c3aed]" />
           <Para>
-            Mint Street is where new money meets new ideas &mdash; a daily read for the people
+            LaunchCode is where new money meets new ideas &mdash; a daily read for the people
             actually making capital allocation, hiring and product decisions inside India&rsquo;s
             startup economy, plus the global investors and operators paying close attention to it.
           </Para>
         </header>
 
-        {/* Why Mint Street */}
-        <Section title="Why Mint Street">
+        {/* Why LaunchCode */}
+        <Section title="Why LaunchCode">
           <Para>
             Our readership is small on purpose. We are read by founders, partners at venture funds,
             CXOs at growth-stage companies, policy staffers and the journalists who cover them
-            elsewhere. They open the Mint Street daily newsletter for sharp, original analysis on
+            elsewhere. They open the LaunchCode daily newsletter for sharp, original analysis on
             funding, M&amp;A and policy &mdash; not for SEO chum.
           </Para>
           <BulletList items={[
@@ -138,24 +138,24 @@ export default function AdvertisePage() {
         {/* CTA */}
         <section
           className={`rounded-xl p-6 mb-10 border ${
-            darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200 shadow-sm"
+            "bg-[#0d0d0d] border-[#1f1f1f]"
           }`}
         >
-          <h2 className="font-display text-[18px] font-bold mb-3 text-ink dark:text-cream">
+          <h2 className="font-display text-[18px] font-bold mb-3 text-[#f0f0f0] text-[#f0f0f0]">
             Get in touch
           </h2>
-          <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-4">
+          <p className="text-[14px] text-[#737373] dark:text-[#555] mb-4">
             Send us a short note with the campaign, the timing and what you&rsquo;d like the
             audience to walk away with. Our partnerships desk replies inside two working days with
             a rate card and recommended formats.
           </p>
-          <p className="text-[14px] text-slate-500 dark:text-slate-400">
-            <span className="font-semibold text-slate-700 dark:text-slate-200">Email:</span>{" "}
+          <p className="text-[14px] text-[#737373] dark:text-[#555]">
+            <span className="font-semibold text-[#a3a3a3] dark:text-slate-200">Email:</span>{" "}
             <a
-              href="mailto:advertise@mintstreet.in"
-              className="hover:underline font-medium text-mint"
+              href="mailto:advertise@launchcode.ai"
+              className="hover:underline font-medium text-[#7c3aed]"
             >
-              advertise@mintstreet.in
+              advertise@launchcode.ai
             </a>
           </p>
         </section>
@@ -163,7 +163,7 @@ export default function AdvertisePage() {
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-2 text-[14px] font-medium hover:underline text-mint"
+          className="inline-flex items-center gap-2 text-[14px] font-medium hover:underline text-[#7c3aed]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
