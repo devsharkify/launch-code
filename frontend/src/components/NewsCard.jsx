@@ -17,7 +17,7 @@ const SOURCE_URLS = {
   "Runway Blog": "https://runwayml.com/blog",
   "ET Startups": "https://economictimes.indiatimes.com/small-biz/startups",
   "YourStory": "https://yourstory.com",
-  "Mint Street": "https://mintstreet.in",
+  "LaunchCode Wire": "https://launchcode.ai",
 };
 
 const DEFAULT_IMAGES = {

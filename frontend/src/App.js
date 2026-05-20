@@ -24,6 +24,8 @@ import EpaperPage from "./pages/EpaperPage";
 import ArticlePage from "./pages/ArticlePage";
 import AgentsDashboard from "./pages/AgentsDashboard";
 import StartupApply from "./pages/StartupApply";
+import ModelsPage from "./pages/ModelsPage";
+import FundingPage from "./pages/FundingPage";
 import { VisitorCounter } from "./components/VisitorCounter";
 import { Footer } from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
@@ -214,9 +216,9 @@ function AppContent() {
       <AppContext.Provider value={contextValue}>
         <div className={`min-h-screen flex items-center justify-center bg-[#080808]`}>
           <div className="text-center p-8">
-            <p className="text-lg font-semibold text-slate-700 mb-2">Admin Access Required</p>
-            <p className="text-sm text-slate-500 mb-4">Only authorized users can access the admin panel.</p>
-            <button onClick={() => navigate("/")} className="text-orange-500 font-medium">Go to Home</button>
+            <p className="text-[15px] font-semibold text-[#f0f0f0] mb-2">Admin Access Required</p>
+            <p className="text-[13px] text-[#404040] mb-4">Only authorized users can access the admin panel.</p>
+            <button onClick={() => navigate("/")} className="text-[#7c3aed] font-medium text-[13px] hover:underline">Return to feed</button>
           </div>
           <Toaster position="top-center" richColors theme={darkMode ? "dark" : "light"} />
         </div>
@@ -245,6 +247,8 @@ function AppContent() {
             <Route path="/news/:id" element={<ArticlePage />} />
             <Route path="/agents" element={<AgentsDashboard />} />
             <Route path="/startup-apply" element={<StartupApply />} />
+            <Route path="/models" element={<ModelsPage />} />
+            <Route path="/funding" element={<FundingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

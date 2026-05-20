@@ -5,8 +5,8 @@ import { Settings, LogOut, Search, ChevronLeft, Zap } from "lucide-react";
 import { CommandPalette } from "./CommandPalette";
 
 const NAV_LINKS = [
-  { label: "AI Models", slug: "ai-models" },
-  { label: "Funding", slug: "funding" },
+  { label: "AI Models", slug: "ai-models", path: "/models" },
+  { label: "Funding", slug: "funding", path: "/funding" },
   { label: "Video AI", slug: "video-ai" },
   { label: "Agents", slug: "agents" },
   { label: "Research", slug: "research" },
@@ -96,7 +96,7 @@ export const Header = () => {
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.slug}
-                  onClick={() => navigate(`/?cat=${link.slug}`)}
+                  onClick={() => link.path ? navigate(link.path) : navigate(`/?cat=${link.slug}`)}
                   className="group relative px-3.5 py-1.5 text-[13px] font-medium text-[#a3a3a3] hover:text-[#f0f0f0] transition-colors rounded-md hover:bg-[#1a1a1a]"
                 >
                   {link.label}
