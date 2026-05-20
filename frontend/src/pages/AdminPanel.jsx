@@ -568,7 +568,7 @@ export default function AdminPanel() {
 
               <div className={`mb-6 p-4 rounded-lg border ${darkMode ? "bg-slate-900 border-slate-600" : "bg-orange-50 border-orange-200"}`}>
                 <h3 className={`text-sm font-semibold mb-3 ${darkMode ? "text-slate-200" : "text-slate-700"}`}>
-                  Add Mint Street Short
+                  Add LaunchCode Short
                 </h3>
                 <div className="flex gap-2 flex-wrap">
                   <Input

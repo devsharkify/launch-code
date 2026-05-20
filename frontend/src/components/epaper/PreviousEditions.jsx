@@ -27,7 +27,7 @@ export const PreviousEditions = ({ recentDates, editions, olderByMonth, selected
           </h2>
         </div>
         <p style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
-          Browse past morning and evening editions of Mint Street ePaper
+          Browse past morning and evening editions of LaunchCode ePaper
         </p>
 
         {/* Recent 7 Days */}

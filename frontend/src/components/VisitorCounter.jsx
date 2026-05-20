@@ -68,19 +68,15 @@ export const VisitorCounter = () => {
   return (
     <div
       data-testid="visitor-counter"
-      className={`fixed left-3 bottom-20 z-40 flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-md transition-all ${
-        darkMode
-          ? "bg-slate-900/80 border-slate-700/60 text-slate-300"
-          : "bg-white/80 border-slate-200/80 text-slate-700 shadow-sm"
-      }`}
+      className="fixed left-3 bottom-20 z-40 flex items-center gap-2 px-3 py-2 rounded-lg border bg-[#0d0d0d]/90 border-[#1f1f1f] backdrop-blur-md transition-all"
     >
       <div className="relative">
-        <Eye size={14} className="text-green-500" />
-        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+        <Eye size={13} className="text-[#22c55e]" />
+        <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-[#22c55e] rounded-full animate-pulse" />
       </div>
       <div className="flex flex-col">
-        <span className="text-xs font-bold tabular-nums leading-none">{formatCount(count)}</span>
-        <span className={`text-[9px] leading-tight ${darkMode ? "text-slate-500" : "text-slate-400"}`}>visitors</span>
+        <span className="text-[12px] font-bold tabular-nums leading-none text-[#f0f0f0]">{formatCount(count)}</span>
+        <span className="text-[9px] leading-tight text-[#404040]">online now</span>
       </div>
     </div>
   );

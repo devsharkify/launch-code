@@ -11,7 +11,7 @@ const Masthead = ({ date, fD, slot }) => {
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: "9px", color: "#555", fontFamily: "system-ui", padding: "4px 0", borderBottom: "2px solid #1a1a1a" }}>
         <span style={{ fontWeight: 600 }}>{fD(date)}</span>
         <span style={{ letterSpacing: "2px", textTransform: "uppercase", fontSize: "8px", color: "#F26B1F", fontWeight: 700 }}>{edLabel}</span>
-        <span>mintstreet.in</span>
+        <span>launchcode.ai</span>
       </div>
     </div>
   );
@@ -35,7 +35,7 @@ const CmykFooter = ({ pageNum, totalPages, date, fD }) => (
         <div key={i} style={{ width: "6px", height: "6px", borderRadius: "50%", background: c }} />
       ))}
     </div>
-    <div style={{ fontSize: "7px", color: "#999", fontFamily: "system-ui" }}>mintstreet.in &bull; Page {pageNum}/{totalPages} &bull; {fD(date)}</div>
+    <div style={{ fontSize: "7px", color: "#999", fontFamily: "system-ui" }}>launchcode.ai &bull; Page {pageNum}/{totalPages} &bull; {fD(date)}</div>
     <div style={{ display: "flex", gap: "3px" }}>
       {["#212121", "#ffeb3b", "#e91e63", "#00bcd4"].map((c, i) => (
         <div key={i} style={{ width: "6px", height: "6px", borderRadius: "50%", background: c }} />

@@ -144,9 +144,9 @@ export default function ProfilePage() {
 
         {/* App Info */}
         <div className="text-center py-4">
-          <img src="/tvr-logo.png" alt="Mint Street" className="h-8 w-auto mx-auto mb-2 opacity-50" />
+          <img src=""  className="h-8 w-auto mx-auto mb-2 opacity-50" />
           <p className={`text-xs ${darkMode ? "text-slate-600" : "text-slate-400"}`}>
-            Mint Street v1.0
+            LaunchCode v1.0
           </p>
         </div>
       </div>

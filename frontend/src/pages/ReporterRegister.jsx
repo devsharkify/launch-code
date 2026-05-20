@@ -88,18 +88,18 @@ export default function ReporterRegister() {
   };
 
   return (
-    <div data-testid="reporter-register-page" className={`min-h-screen py-8 px-4 ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
+    <div data-testid="reporter-register-page" className={`min-h-screen py-8 px-4 ${darkMode ? "bg-[#080808]" : "bg-[#111]"}`}>
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-[#7c3aed] rounded-full flex items-center justify-center mx-auto mb-4">
             <Camera size={40} className="text-white" />
           </div>
-          <h1 className={`text-2xl font-bold mb-2 ${darkMode ? "text-white" : "text-slate-900"}`}>
+          <h1 className={`text-2xl font-bold mb-2 ${"text-[#f0f0f0]"}`}>
             Become a Reporter
           </h1>
-          <p className={`text-sm ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-            Join Mint Street as a citizen reporter and share local news
+          <p className={`text-sm ${darkMode ? "text-[#555]" : "text-[#737373]"}`}>
+            Join LaunchCode as a citizen reporter and share local news
           </p>
         </div>
 
@@ -112,10 +112,10 @@ export default function ReporterRegister() {
                 ? "bg-yellow-100 border border-yellow-300"
                 : "bg-red-100 border border-red-300"
           }`}>
-            <p className="font-medium text-slate-900">
+            <p className="font-medium text-[#f0f0f0]">
               Already registered!
             </p>
-            <p className="text-sm text-slate-700 mt-1">
+            <p className="text-sm text-[#a3a3a3] mt-1">
               {existingReporter.status === "approved"
                 ? `Welcome back, ${existingReporter.name}! You're approved.`
                 : existingReporter.status === "pending"
@@ -125,7 +125,7 @@ export default function ReporterRegister() {
             <Button
               data-testid="go-to-dashboard-btn"
               onClick={goToDashboard}
-              className="mt-3 bg-orange-500 hover:bg-orange-600"
+              className="mt-3 bg-[#7c3aed] hover:bg-[#6d28d9]"
             >
               Go to Dashboard
               <ArrowRight size={16} className="ml-1" />
@@ -135,11 +135,11 @@ export default function ReporterRegister() {
 
         {/* Registration Form */}
         {!existingReporter && (
-          <form onSubmit={handleSubmit} className={`p-6 rounded-lg border ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+          <form onSubmit={handleSubmit} className={`p-6 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
             <div className="space-y-4">
               {/* Name */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <User size={14} className="inline mr-1" />
                   Full Name *
                 </Label>
@@ -148,13 +148,13 @@ export default function ReporterRegister() {
                   value={formData.name}
                   onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                   placeholder="Enter your full name"
-                  className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                  className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                 />
               </div>
 
               {/* Phone */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <Phone size={14} className="inline mr-1" />
                   Phone Number *
                 </Label>
@@ -165,17 +165,17 @@ export default function ReporterRegister() {
                     onChange={handlePhoneChange}
                     placeholder="9876543210"
                     maxLength={10}
-                    className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                    className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                   />
                   {checkingPhone && (
-                    <Loader2 size={16} className="absolute right-3 top-3 animate-spin text-orange-500" />
+                    <Loader2 size={16} className="absolute right-3 top-3 animate-spin text-[#7c3aed]" />
                   )}
                 </div>
               </div>
 
               {/* Email */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <Mail size={14} className="inline mr-1" />
                   Email (Optional)
                 </Label>
@@ -185,13 +185,13 @@ export default function ReporterRegister() {
                   value={formData.email}
                   onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                   placeholder="reporter@example.com"
-                  className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                  className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                 />
               </div>
 
               {/* Location */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <MapPin size={14} className="inline mr-1" />
                   Location
                 </Label>
@@ -200,13 +200,13 @@ export default function ReporterRegister() {
                   value={formData.location}
                   onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                   placeholder="City, State"
-                  className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                  className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                 />
               </div>
 
               {/* Photo URL */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <Camera size={14} className="inline mr-1" />
                   Photo URL
                 </Label>
@@ -215,13 +215,13 @@ export default function ReporterRegister() {
                   value={formData.photo}
                   onChange={(e) => setFormData(prev => ({ ...prev, photo: e.target.value }))}
                   placeholder="https://example.com/photo.jpg"
-                  className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                  className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                 />
               </div>
 
               {/* Bio */}
               <div className="space-y-2">
-                <Label className={darkMode ? "text-slate-200" : ""}>
+                <Label className={darkMode ? "text-[#e5e5e5]" : ""}>
                   <FileText size={14} className="inline mr-1" />
                   About You
                 </Label>
@@ -231,7 +231,7 @@ export default function ReporterRegister() {
                   onChange={(e) => setFormData(prev => ({ ...prev, bio: e.target.value }))}
                   placeholder="Tell us about yourself..."
                   rows={3}
-                  className={darkMode ? "bg-slate-700 border-slate-600 text-white" : ""}
+                  className={darkMode ? "bg-[#1a1a1a] border-[#262626] text-white" : ""}
                 />
               </div>
 
@@ -240,7 +240,7 @@ export default function ReporterRegister() {
                 type="submit"
                 data-testid="register-submit-btn"
                 disabled={loading || !formData.name || !formData.phone}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-6"
+                className="w-full bg-[#7c3aed] hover:bg-[#6d28d9] text-white py-6"
               >
                 {loading ? (
                   <>
@@ -259,11 +259,11 @@ export default function ReporterRegister() {
         )}
 
         {/* Info */}
-        <div className={`mt-6 p-4 rounded-lg ${darkMode ? "bg-slate-800" : "bg-orange-50"}`}>
-          <h3 className={`font-semibold mb-2 ${darkMode ? "text-white" : "text-slate-900"}`}>
+        <div className={`mt-6 p-4 rounded-lg ${"bg-[#0d0d0d]"}`}>
+          <h3 className={`font-semibold mb-2 ${"text-[#f0f0f0]"}`}>
             What happens next?
           </h3>
-          <ul className={`text-sm space-y-2 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
+          <ul className={`text-sm space-y-2 ${darkMode ? "text-[#a3a3a3]" : "text-[#737373]"}`}>
             <li>&bull; Admin will review your application</li>
             <li>&bull; Once approved, you can submit news</li>
             <li>&bull; Get your digital ID card</li>

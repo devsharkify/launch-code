@@ -29,6 +29,7 @@ import FundingPage from "./pages/FundingPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { VisitorCounter } from "./components/VisitorCounter";
 import { Footer } from "./components/Footer";
+import { NewsletterModal } from "./components/NewsletterModal";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -263,6 +264,7 @@ function AppContent() {
         </main>
         <Footer />
         {!isSwipeMode && <ArticleModal />}
+        {!isAdminPage && !isReporterPage && !isLoginPage && <NewsletterModal />}
         <Toaster position="top-center" richColors theme={darkMode ? "dark" : "light"} />
       </div>
     </AppContext.Provider>

@@ -1,9 +1,24 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API, AppContext } from "../App";
 import { Clock, ArrowLeft, Share2, Link2, Check, Bookmark, BookmarkCheck, Zap } from "lucide-react";
 import { MOCK_ARTICLES } from "../data/mockArticles";
+
+function useReadingProgress() {
+  const [progress, setProgress] = useState(0);
+  const update = useCallback(() => {
+    const el = document.documentElement;
+    const scrollTop = el.scrollTop || document.body.scrollTop;
+    const height = el.scrollHeight - el.clientHeight;
+    setProgress(height > 0 ? Math.min(100, (scrollTop / height) * 100) : 0);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [update]);
+  return progress;
+}
 
 const AI_DEFAULT_IMAGES = {
   "ai-models": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -68,6 +83,7 @@ export default function ArticlePage() {
   const [relatedArticles, setRelatedArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+  const readingProgress = useReadingProgress();
 
   useEffect(() => {
     setLoading(true);
@@ -139,6 +155,14 @@ export default function ArticlePage() {
 
   return (
     <div data-testid="article-page" className="min-h-screen pb-10 bg-[#080808]">
+
+      {/* Reading progress bar */}
+      <div className="fixed top-0 left-0 right-0 h-[2px] z-[60] bg-[#1a1a1a]">
+        <div
+          className="h-full bg-[#7c3aed] transition-all duration-100 ease-out"
+          style={{ width: `${readingProgress}%`, boxShadow: readingProgress > 0 ? "0 0 8px rgba(124,58,237,0.6)" : "none" }}
+        />
+      </div>
 
       {/* Sticky top bar */}
       <div className="sticky top-[84px] z-30 px-4 py-2.5 flex items-center gap-3 border-b bg-[#080808]/95 border-[#1a1a1a] backdrop-blur-md">
