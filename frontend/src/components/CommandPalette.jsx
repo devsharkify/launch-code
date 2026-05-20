@@ -4,11 +4,11 @@ import { Search, ArrowRight, Cpu, DollarSign, Video, Zap, BookOpen, X } from "lu
 import { AppContext } from "../App";
 
 const QUICK_LINKS = [
-  { icon: Cpu, label: "AI Models", sub: "Foundation model tracker", path: "/?cat=ai-models" },
-  { icon: Video, label: "Video AI", sub: "Generative video startups", path: "/?cat=video-ai" },
-  { icon: DollarSign, label: "Funding Rounds", sub: "Latest AI investment news", path: "/?cat=funding" },
+  { icon: Cpu, label: "AI Model Leaderboard", sub: "Benchmarks: SWE-bench, MMMU, MATH…", path: "/models" },
+  { icon: DollarSign, label: "Funding Wire", sub: "$4.2B tracked · 15 rounds in 2026", path: "/funding" },
+  { icon: Video, label: "Video AI", sub: "Runway, Pika, Sora, Veo — all coverage", path: "/?cat=video-ai" },
   { icon: Zap, label: "AI Agents", sub: "Autonomous agent ecosystem", path: "/?cat=agents" },
-  { icon: BookOpen, label: "Research", sub: "Papers and benchmarks", path: "/?cat=research" },
+  { icon: BookOpen, label: "Research", sub: "Papers, benchmarks, arxiv breakdowns", path: "/?cat=research" },
 ];
 
 export const CommandPalette = ({ open, onClose }) => {

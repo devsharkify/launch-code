@@ -92,3 +92,19 @@
 /* Line clamp */
 .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Scroll-reveal */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.revealed {
+  animation: revealUp 0.4s ease-out forwards;
+}
+.reveal-delay-1.revealed { animation-delay: 0.05s; }
+.reveal-delay-2.revealed { animation-delay: 0.10s; }
+.reveal-delay-3.revealed { animation-delay: 0.15s; }
+.reveal-delay-4.revealed { animation-delay: 0.20s; }

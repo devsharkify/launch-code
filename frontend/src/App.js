@@ -26,6 +26,7 @@ import AgentsDashboard from "./pages/AgentsDashboard";
 import StartupApply from "./pages/StartupApply";
 import ModelsPage from "./pages/ModelsPage";
 import FundingPage from "./pages/FundingPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import { VisitorCounter } from "./components/VisitorCounter";
 import { Footer } from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
@@ -249,6 +250,7 @@ function AppContent() {
             <Route path="/startup-apply" element={<StartupApply />} />
             <Route path="/models" element={<ModelsPage />} />
             <Route path="/funding" element={<FundingPage />} />
+            <Route path="*" element={<NotFoundPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

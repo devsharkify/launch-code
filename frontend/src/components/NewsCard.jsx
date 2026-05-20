@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 import { Bookmark, BookmarkCheck, Share2, Pencil } from "lucide-react";
+import { useReveal } from "../hooks/useReveal";
 
 const SOURCE_URLS = {
   "LaunchCode": "https://launchcode.ai",
@@ -35,6 +36,7 @@ export const NewsCard = ({ article, articlesList = [] }) => {
   const { saveArticle, isArticleSaved, openArticle, isAdmin } = useContext(AppContext);
   const navigate = useNavigate();
   const isSaved = isArticleSaved(article.id);
+  const revealRef = useReveal();
 
   const title = article.title;
   const summary = article.summary;
@@ -70,8 +72,9 @@ export const NewsCard = ({ article, articlesList = [] }) => {
 
   return (
     <article
+      ref={revealRef}
       data-testid={`news-card-${article.id}`}
-      className="group news-card rounded-lg overflow-hidden border border-[#1f1f1f] bg-[#111111] hover:border-[#7c3aed]/50 hover:shadow-[0_4px_24px_rgba(124,58,237,0.1)] transition-all duration-200"
+      className="reveal group news-card rounded-lg overflow-hidden border border-[#1f1f1f] bg-[#111111] hover:border-[#7c3aed]/50 hover:shadow-[0_4px_24px_rgba(124,58,237,0.1)] transition-all duration-200"
     >
       {/* Top meta row */}
       <div className="flex items-center justify-between px-3 py-2 border-b border-[#1a1a1a]">

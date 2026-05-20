@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
 import { Clock, ArrowRight, Bookmark, BookmarkCheck } from "lucide-react";
+import { useReveal } from "../hooks/useReveal";
 
 function timeAgo(dateStr) {
   try {
@@ -13,12 +14,14 @@ function timeAgo(dateStr) {
 
 export const FeaturedCard = ({ article }) => {
   const { openArticle, saveArticle, isArticleSaved } = useContext(AppContext);
+  const revealRef = useReveal();
   if (!article) return null;
   const saved = isArticleSaved(article.id);
 
   return (
     <article
-      className="group relative rounded-xl overflow-hidden border border-[#1f1f1f] bg-[#111] cursor-pointer hover:border-[#7c3aed]/40 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(124,58,237,0.12)]"
+      ref={revealRef}
+      className="reveal group relative rounded-xl overflow-hidden border border-[#1f1f1f] bg-[#111] cursor-pointer hover:border-[#7c3aed]/40 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(124,58,237,0.12)]"
       onClick={() => openArticle(article)}
     >
       <div className="relative aspect-[16/9] overflow-hidden">
