@@ -43,4 +43,4 @@ and we never strip watermarks or credits from third-party imagery.
 
 ## License
 
-© 2026 Mint Street Media Pvt Ltd. All rights reserved.
+© 2026. All rights reserved.

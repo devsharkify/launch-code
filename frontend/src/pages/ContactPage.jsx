@@ -106,7 +106,7 @@ export default function ContactPage() {
                 <span className="font-semibold text-slate-700 dark:text-slate-200 block">
                   Office
                 </span>
-                Mint Street Media Pvt Ltd
+               
                 <br />
                 Plot 14, HUDA Tech Park, Madhapur
                 <br />

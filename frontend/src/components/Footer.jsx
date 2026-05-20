@@ -243,7 +243,7 @@ export const Footer = () => {
               darkMode ? "text-[#7A8581]" : "text-ink-muted"
             }`}
           >
-            © {year} Mint Street Media Pvt Ltd. Made with masala chai in Hyderabad.
+            © {year}. Made with masala chai in Hyderabad.
           </p>
         </div>
       </div>

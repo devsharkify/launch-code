@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
         </header>
 
         <Para>
-          This is the plain-English version of how Mint Street Media Pvt Ltd (&ldquo;Mint
+          This is the plain-English version of how (&ldquo;Mint
           Street,&rdquo; &ldquo;we&rdquo;) handles your data when you read us at mintstreet.in,
           subscribe to our newsletters, or contact the newsroom. We try to collect as little as
           possible and explain the rest honestly. If anything below is unclear, write to
@@ -194,7 +194,7 @@ export default function PrivacyPolicy() {
             Contact us about privacy
           </h2>
           <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-2">
-            Mint Street Media Pvt Ltd
+           
             <br />
             Plot 14, HUDA Tech Park, Madhapur
             <br />

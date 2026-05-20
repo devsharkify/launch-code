@@ -145,7 +145,7 @@ export default function AboutPage() {
             Get in touch
           </h2>
           <p className="text-[14px] text-slate-500 dark:text-slate-400 mb-1">
-            <span className="font-medium text-slate-700 dark:text-slate-200">Mint Street Media Pvt Ltd</span>
+            <span className="font-medium text-slate-700 dark:text-slate-200">Mint Street</span>
             <br />
             Hyderabad &middot; Bengaluru &middot; India
           </p>
