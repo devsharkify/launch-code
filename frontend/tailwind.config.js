@@ -67,7 +67,7 @@ module.exports = {
   				DEFAULT: '#F5C13D',
   				dark: '#D4A017'
   			},
-  			paper: '#FAF7F1',
+  			paper: '#FFFFFF',
   			ink: {
   				DEFAULT: '#1A2421',
   				muted: '#6B7872'

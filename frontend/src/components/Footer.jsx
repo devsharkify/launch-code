@@ -55,20 +55,20 @@ export const Footer = () => {
   return (
     <footer
       data-testid="footer"
-      className={`mt-12 border-t-2 border-mint ${
-        darkMode ? "bg-[#1C1410]" : "bg-[#FAF7F1]"
+      className={`mt-8 border-t-2 border-mint ${
+        darkMode ? "bg-[#1C1410]" : "bg-white"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto px-6 py-10">
+      <div className="max-w-screen-xl mx-auto px-6 py-6">
         {/* Newsletter band */}
         <div
-          className={`pb-8 mb-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b ${
+          className={`pb-5 mb-5 grid grid-cols-1 md:grid-cols-3 gap-6 items-center border-b ${
             darkMode ? "border-[#1F2A26]" : "border-[#E5E0D6]"
           }`}
         >
           <div className="md:col-span-2">
             <h2
-              className={`font-display text-[28px] md:text-[32px] font-bold leading-tight ${
+              className={`font-display text-[22px] md:text-[26px] font-bold leading-tight ${
                 darkMode ? "text-[#F4EEDF]" : "text-ink"
               }`}
             >
@@ -118,7 +118,7 @@ export const Footer = () => {
         </div>
 
         {/* Main 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1 - Mint Street brand */}
           <div>
             <span
@@ -211,7 +211,7 @@ export const Footer = () => {
 
         {/* Bottom strip */}
         <div
-          className={`mt-10 pt-6 border-t flex flex-col gap-2 ${
+          className={`mt-6 pt-4 border-t flex flex-col gap-1.5 ${
             darkMode ? "border-[#1F2A26]" : "border-[#E5E0D6]"
           }`}
         >
