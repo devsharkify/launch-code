@@ -147,37 +147,53 @@ function MarketsTile({ articles }) {
   return (
     <div className="lg:col-span-1 lg:row-span-1 bg-mint text-white rounded-md overflow-hidden flex flex-col">
       {/* Header */}
-      <div className="px-5 pt-5 pb-3 border-b border-white/20 flex items-center justify-between">
+      <div className="px-4 pt-4 pb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-white/80 animate-pulse" />
-          <span className="text-[11px] font-bold uppercase tracking-widest opacity-90">
-            Funding Wire
+          <span className="relative flex h-2 w-2 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
           </span>
+          <span className="text-[10px] font-black uppercase tracking-[0.18em]">Funding Wire</span>
         </div>
         <button
           onClick={() => navigate("/?cat=funding")}
-          className="text-[10px] font-semibold opacity-70 hover:opacity-100 transition underline underline-offset-2"
+          className="text-[10px] font-bold bg-white/15 hover:bg-white/25 transition-colors px-2.5 py-1 rounded-full"
         >
-          See all
+          See all →
         </button>
       </div>
 
+      <div className="mx-4 border-t border-white/20" />
+
       {/* Articles */}
-      <div className="flex flex-col flex-1 divide-y divide-white/15">
-        {items.map((article) => (
-          <button
-            key={article.id}
-            onClick={() => openArticle(article)}
-            className="text-left px-5 py-4 hover:bg-white/10 transition group flex-1 flex flex-col justify-between gap-1.5"
-          >
-            <span className="text-[13px] font-semibold leading-snug line-clamp-2 group-hover:underline underline-offset-2">
-              {article.title}
-            </span>
-            <div className="flex items-center justify-between mt-1">
-              <span className="text-[10px] opacity-60 font-medium">{article.source || "Mint Street"}</span>
-              <span className="text-[18px] opacity-40 group-hover:opacity-90 group-hover:translate-x-0.5 transition-all">→</span>
-            </div>
-          </button>
+      <div className="flex flex-col flex-1 px-4 py-1">
+        {items.map((article, i) => (
+          <div key={article.id}>
+            <button
+              onClick={() => openArticle(article)}
+              className="w-full text-left py-3.5 hover:bg-white/10 -mx-4 px-4 transition-colors group"
+            >
+              <div className="flex items-start gap-2.5">
+                <span className="text-[11px] font-black opacity-25 mt-px tabular-nums w-3.5 shrink-0 text-right">{i + 1}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[12.5px] font-semibold leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity">
+                    {article.title}
+                  </p>
+                  <div className="flex items-center gap-1.5 mt-1.5">
+                    <span className="text-[10px] opacity-50 font-medium">{article.source || "Mint Street"}</span>
+                    {article.category && (
+                      <>
+                        <span className="text-[9px] opacity-30">·</span>
+                        <span className="text-[9px] font-bold uppercase tracking-wide opacity-40">{article.category}</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+                <span className="text-[13px] opacity-30 group-hover:opacity-80 group-hover:translate-x-0.5 transition-all mt-px shrink-0">→</span>
+              </div>
+            </button>
+            {i < items.length - 1 && <div className="border-t border-white/10" />}
+          </div>
         ))}
       </div>
     </div>
