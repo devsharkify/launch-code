@@ -8,9 +8,9 @@ module.exports = {
   theme: {
   	extend: {
   		fontFamily: {
-  			'serif-display': ['"Fraunces"', '"Spectral"', 'Georgia', 'serif'],
-  			'display': ['"Fraunces"', 'serif'],
   			'sans': ['"Inter"', 'system-ui', 'sans-serif'],
+  			'mono': ['"JetBrains Mono"', '"Fira Code"', 'Consolas', 'monospace'],
+  			'display': ['"Inter"', 'system-ui', 'sans-serif'],
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -58,42 +58,68 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
+  			// Launch Code brand palette
+  			brand: {
+  				DEFAULT: '#7c3aed',
+  				dark: '#6d28d9',
+  				light: '#ede9fe',
+  				glow: 'rgba(124,58,237,0.25)',
+  			},
+  			cyber: {
+  				DEFAULT: '#06b6d4',
+  				dark: '#0891b2',
+  				light: '#cffafe',
+  			},
+  			surface: {
+  				DEFAULT: '#111111',
+  				elevated: '#1a1a1a',
+  				border: '#262626',
+  			},
+  			ink: {
+  				DEFAULT: '#f0f0f0',
+  				muted: '#737373',
+  				subtle: '#404040',
+  			},
+  			// legacy aliases so existing components don't break
   			mint: {
-  				DEFAULT: '#F26B1F',
-  				dark: '#C2410B',
-  				light: '#FFF1E6'
+  				DEFAULT: '#7c3aed',
+  				dark: '#6d28d9',
+  				light: '#ede9fe',
   			},
   			saffron: {
-  				DEFAULT: '#F5C13D',
-  				dark: '#D4A017'
+  				DEFAULT: '#06b6d4',
+  				dark: '#0891b2',
   			},
-  			paper: '#FFFFFF',
-  			ink: {
-  				DEFAULT: '#1A2421',
-  				muted: '#6B7872'
-  			}
+  			paper: '#111111',
+  		},
+  		boxShadow: {
+  			'brand': '0 0 20px rgba(124,58,237,0.3)',
+  			'brand-sm': '0 0 10px rgba(124,58,237,0.2)',
+  			'cyber': '0 0 20px rgba(6,182,212,0.3)',
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
+  				from: { height: '0' },
+  				to: { height: 'var(--radix-accordion-content-height)' }
   			},
   			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
+  				from: { height: 'var(--radix-accordion-content-height)' },
+  				to: { height: '0' }
+  			},
+  			'marquee': {
+  				from: { transform: 'translateX(0)' },
+  				to: { transform: 'translateX(-50%)' }
+  			},
+  			'pulse-brand': {
+  				'0%, 100%': { boxShadow: '0 0 0 0 rgba(124,58,237,0.3)' },
+  				'50%': { boxShadow: '0 0 0 8px rgba(124,58,237,0)' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'marquee': 'marquee 35s linear infinite',
+  			'pulse-brand': 'pulse-brand 2s infinite',
   		}
   	}
   },

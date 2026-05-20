@@ -35,7 +35,7 @@ import Disclaimer from "./pages/Disclaimer";
 import AdvertisePage from "./pages/AdvertisePage";
 import WriteForUs from "./pages/WriteForUs";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://mint-street-production.up.railway.app";
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://launchcode-production.up.railway.app";
 export const API = `${BACKEND_URL}/api`;
 
 // Attach admin phone header automatically on every request made by the logged-in admin.
@@ -62,7 +62,7 @@ function ScrollToTop() {
 function AppContent() {
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
-    return saved ? JSON.parse(saved) : false;
+    return saved ? JSON.parse(saved) : true;
   });
   const [isLoggedIn, setIsLoggedIn] = useState(() => !!localStorage.getItem("userPhone"));
   const [isAdmin, setIsAdmin] = useState(() => localStorage.getItem("userPhone") === "7386917770");
@@ -212,7 +212,7 @@ function AppContent() {
   if (isAdminPage && !isAdmin) {
     return (
       <AppContext.Provider value={contextValue}>
-        <div className={`min-h-screen flex items-center justify-center ${darkMode ? "dark bg-slate-900" : "bg-slate-50"}`}>
+        <div className={`min-h-screen flex items-center justify-center bg-[#080808]`}>
           <div className="text-center p-8">
             <p className="text-lg font-semibold text-slate-700 mb-2">Admin Access Required</p>
             <p className="text-sm text-slate-500 mb-4">Only authorized users can access the admin panel.</p>
@@ -226,7 +226,7 @@ function AppContent() {
 
   return (
     <AppContext.Provider value={contextValue}>
-      <div className={`min-h-screen ${darkMode ? "dark bg-slate-900" : "bg-slate-50"}`}>
+      <div className={`min-h-screen ${darkMode ? "dark bg-[#080808]" : "bg-[#080808]"}`}>
         <ScrollToTop />
         {!isSwipeMode && !isReporterPage && !isLoginPage && <Header />}
         <main className={`${isAdminPage || isSwipeMode || isReporterPage ? "" : "safe-area-bottom"}`}>

@@ -77,21 +77,22 @@ function LeadTile({ article }) {
           onError={(e) => { e.target.src = DEFAULT_IMAGE; }}
         />
         {article.is_pinned && (
-          <span className="absolute top-3 left-3 bg-saffron text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">
-            Breaking
+          <span className="absolute top-3 left-3 bg-[#7c3aed] text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">
+            Featured
           </span>
         )}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/50 via-transparent to-transparent" />
       </div>
 
       <div className="pt-4">
-        <h2 className="font-display text-[28px] md:text-[36px] font-bold leading-tight text-ink line-clamp-3 mb-3">
+        <h2 className="text-[26px] md:text-[34px] font-bold leading-tight text-[#f0f0f0] line-clamp-3 mb-3 tracking-tight">
           {title}
         </h2>
-        <p className="text-[15px] text-ink-muted line-clamp-3 mb-3">
+        <p className="text-[14px] text-[#737373] line-clamp-3 mb-3 leading-relaxed">
           {summary}
         </p>
-        <div className="flex items-center gap-2 text-[12px] text-ink-muted">
-          <span className="font-semibold">By Mint Street</span>
+        <div className="flex items-center gap-2 text-[12px] text-[#404040]">
+          <span className="font-semibold text-[#7c3aed] font-mono">LaunchCode</span>
           <span className="opacity-50">·</span>
           <span>{formatDate(article.published_at || article.created_at)}</span>
           <span className="opacity-50">·</span>
@@ -125,10 +126,10 @@ function MediumTile({ article }) {
         />
       </div>
       <div className="flex-1 min-w-0 flex flex-col justify-between">
-        <h3 className="font-display text-[15px] font-bold line-clamp-3 text-ink leading-snug">
+        <h3 className="text-[14px] font-semibold line-clamp-3 text-[#f0f0f0] leading-snug tracking-tight group-hover:text-white transition-colors">
           {title}
         </h3>
-        <div className="flex items-center gap-1.5 text-[11px] text-ink-muted">
+        <div className="flex items-center gap-1.5 text-[11px] text-[#404040]">
           <Clock size={10} />
           <span>{formatDate(article.published_at || article.created_at)}</span>
         </div>
@@ -145,7 +146,7 @@ function MarketsTile({ articles }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="lg:col-span-1 lg:row-span-1 bg-mint text-white rounded-md overflow-hidden flex flex-col">
+    <div className="lg:col-span-1 lg:row-span-1 bg-gradient-to-br from-[#7c3aed] to-[#6d28d9] text-white rounded-lg overflow-hidden flex flex-col border border-[#7c3aed]/30 shadow-[0_0_24px_rgba(124,58,237,0.2)]">
       {/* Header */}
       <div className="px-4 pt-4 pb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -180,7 +181,7 @@ function MarketsTile({ articles }) {
                     {article.title}
                   </p>
                   <div className="flex items-center gap-1.5 mt-1.5">
-                    <span className="text-[10px] opacity-50 font-medium">{article.source || "Mint Street"}</span>
+                    <span className="text-[10px] opacity-50 font-medium">{article.source || "LaunchCode"}</span>
                     {article.category && (
                       <>
                         <span className="text-[9px] opacity-30">·</span>
@@ -324,21 +325,21 @@ export default function NewsFeed() {
     : activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1);
 
   return (
-    <div data-testid="news-feed-page" className="min-h-screen pb-20 bg-paper">
-      {/* ── Section A: Combined Search + Filter pill bar ── */}
-      <div className="flex items-center gap-2 py-3 px-4 bg-paper sticky top-[100px] z-30 border-b border-[#E5E0D6]">
+    <div data-testid="news-feed-page" className="min-h-screen pb-20 bg-[#080808]">
+      {/* ── Section A: Search + Filter bar ── */}
+      <div className="flex items-center gap-2 py-3 px-4 bg-[#080808]/95 sticky top-[84px] z-30 border-b border-[#1a1a1a] backdrop-blur-md">
         <div className="relative flex-1 flex items-center">
-          <Search size={15} className="absolute left-4 text-ink-muted pointer-events-none" />
+          <Search size={14} className="absolute left-3 text-[#404040] pointer-events-none" />
           <input
             data-testid="search-input"
             type="text"
             value={searchInput}
             onChange={(e) => handleSearchInput(e.target.value)}
-            placeholder="Search articles..."
-            className="w-full pl-10 pr-28 py-2 text-sm rounded-full border border-[#E5E0D6] bg-white text-ink placeholder:text-ink-muted outline-none transition-all focus:border-mint focus:ring-2 focus:ring-mint/20"
+            placeholder="Search AI news..."
+            className="w-full pl-9 pr-28 py-2 text-[13px] rounded-md border border-[#262626] bg-[#111] text-[#f0f0f0] placeholder:text-[#333] outline-none transition-all focus:border-[#7c3aed] focus:ring-1 focus:ring-[#7c3aed]"
           />
           {isSearching && !loading && (
-            <span className="absolute right-10 text-[11px] text-mint font-medium pointer-events-none">
+            <span className="absolute right-10 text-[11px] text-[#7c3aed] font-medium pointer-events-none">
               {`${searchTotal} result${searchTotal !== 1 ? "s" : ""}`}
             </span>
           )}
@@ -346,7 +347,7 @@ export default function NewsFeed() {
             <button
               data-testid="search-clear-btn"
               onClick={clearSearch}
-              className="absolute right-3 p-0.5 rounded-full text-ink-muted hover:text-ink hover:bg-[#E5E0D6]/60"
+              className="absolute right-3 p-0.5 rounded text-[#404040] hover:text-[#f0f0f0]"
             >
               <X size={14} />
             </button>
@@ -356,24 +357,20 @@ export default function NewsFeed() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="text-[12px] font-semibold rounded-full border border-mint/40 bg-white text-ink px-3 py-2 outline-none cursor-pointer hover:border-mint transition"
+          className="text-[12px] font-medium rounded-md border border-[#262626] bg-[#111] text-[#a3a3a3] px-3 py-2 outline-none cursor-pointer hover:border-[#7c3aed] transition"
         >
           {SORT_OPTIONS.map(opt => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
 
         <select
           value={timeFilter}
           onChange={(e) => setTimeFilter(e.target.value)}
-          className="text-[12px] font-semibold rounded-full border border-mint/40 bg-white text-ink px-3 py-2 outline-none cursor-pointer hover:border-mint transition"
+          className="text-[12px] font-medium rounded-md border border-[#262626] bg-[#111] text-[#a3a3a3] px-3 py-2 outline-none cursor-pointer hover:border-[#7c3aed] transition"
         >
           {TIME_FILTERS.map(opt => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
       </div>
@@ -387,23 +384,20 @@ export default function NewsFeed() {
       {/* Loading */}
       {loading && (
         <div className="flex flex-col items-center justify-center py-24">
-          <Loader2 size={36} className="animate-spin text-mint mb-4" />
-          <p className="text-sm text-ink-muted">
-            Loading news...
-          </p>
+          <Loader2 size={32} className="animate-spin text-[#7c3aed] mb-4" />
+          <p className="text-sm text-[#404040]">Loading intelligence...</p>
         </div>
       )}
 
-      {/* Empty */}
       {!loading && articles.length === 0 && (
         <div className="flex flex-col items-center justify-center py-24">
-          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 bg-mint/10">
-            <Newspaper size={28} className="text-mint" />
+          <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 bg-[#7c3aed]/10 border border-[#7c3aed]/20">
+            <Newspaper size={28} className="text-[#7c3aed]" />
           </div>
-          <h3 className="text-base font-bold mb-1 tracking-tight text-ink">
+          <h3 className="text-base font-semibold mb-1 tracking-tight text-[#f0f0f0]">
             No articles found
           </h3>
-          <p className="text-xs text-center max-w-[240px] text-ink-muted">
+          <p className="text-xs text-center max-w-[240px] text-[#404040]">
             Try adjusting your filters or category
           </p>
         </div>
@@ -426,9 +420,9 @@ export default function NewsFeed() {
 
           <div className="max-w-screen-xl mx-auto px-4">
             {/* ── Section C: Divider + title ── */}
-            <div className="border-t-2 border-mint mb-1" />
+            <div className="border-t border-[#262626] mb-1" />
             <div className="flex justify-between items-baseline mb-5 pt-3">
-              <h2 className="font-display text-[20px] font-bold text-ink">
+              <h2 className="text-[18px] font-bold text-[#f0f0f0] tracking-tight">
                 {sectionTitle}
               </h2>
             </div>
@@ -451,7 +445,7 @@ export default function NewsFeed() {
                   data-testid="load-more-btn"
                   onClick={handleLoadMore}
                   disabled={loadingMore}
-                  className="bg-mint hover:bg-mint-dark text-white rounded-full px-8 py-3 text-[13px] font-bold uppercase tracking-wider transition-all active:scale-95"
+                  className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white rounded-md px-8 py-3 text-[13px] font-semibold tracking-wide transition-all active:scale-95 hover:shadow-[0_0_16px_rgba(124,58,237,0.4)]"
                 >
                   {loadingMore ? (
                     <>

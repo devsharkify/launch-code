@@ -1,83 +1,67 @@
 import { useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AppContext } from "../App";
-import {
-  Moon,
-  Sun,
-  Settings,
-  LogOut,
-  Search,
-  ChevronLeft,
-} from "lucide-react";
+import { Settings, LogOut, Search, ChevronLeft, Zap } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Markets", slug: "ipo" },
+  { label: "AI Models", slug: "ai-models" },
   { label: "Funding", slug: "funding" },
-  { label: "Startups", slug: "startups" },
-  { label: "Policy", slug: "policy" },
-  { label: "Deep Tech", slug: "deeptech" },
+  { label: "Video AI", slug: "video-ai" },
+  { label: "Agents", slug: "agents" },
+  { label: "Research", slug: "research" },
 ];
 
 const TICKER_ITEMS = [
-  "Razorpay raises $75M Series F",
-  "Zepto valued at $5B",
-  "NSE files for IPO",
+  "Runway ML raises $308M Series D at $4B valuation",
+  "Sora by OpenAI now open to all Plus subscribers",
+  "Mistral releases Codestral 2.1 — 256k context",
+  "Google DeepMind Veo 3 outperforms Sora on ELO benchmarks",
+  "Pika Labs closes $80M Series B",
+  "Stability AI acquired by Harmony Intelligence",
+  "Anthropic Claude 4 Opus achieves 92.3% on SWE-bench",
 ];
 
 export const Header = () => {
-  const { darkMode, toggleDarkMode, isAdmin, isLoggedIn, handleLogout } =
-    useContext(AppContext);
+  const { isAdmin, isLoggedIn, handleLogout } = useContext(AppContext);
   const navigate = useNavigate();
   const location = useLocation();
-
   const isHomePage = location.pathname === "/";
 
   const today = new Date();
-  const formattedDate = today.toLocaleDateString("en-IN", {
+  const formattedDate = today.toLocaleDateString("en-US", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
 
   const tickerStream = (
-    <div className="flex whitespace-nowrap shrink-0 pr-12">
-      <span className="opacity-70">{formattedDate}</span>
-      <span className="px-2 opacity-50">·</span>
-      <span className="text-saffron">LATEST</span>
+    <div className="flex whitespace-nowrap shrink-0 pr-16">
+      <span className="text-[#737373]">{formattedDate}</span>
+      <span className="px-2 text-[#333]">·</span>
+      <span className="text-[#7c3aed] font-bold">LIVE</span>
       {TICKER_ITEMS.map((item) => (
         <span key={item} className="flex items-center">
-          <span className="px-2 opacity-50">·</span>
-          <span>{item}</span>
+          <span className="px-3 text-[#333]">·</span>
+          <span className="text-[#d4d4d4]">{item}</span>
         </span>
       ))}
     </div>
   );
 
   return (
-    <header
-      className={`sticky top-0 z-50 ${
-        darkMode ? "bg-[#1C1410]" : "bg-paper"
-      }`}
-      data-testid="header"
-    >
+    <header className="sticky top-0 z-50 bg-[#080808]/95 backdrop-blur-md border-b border-[#1f1f1f]">
       <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
 
-      {/* ── Primary bar ── */}
-      <div className="h-16 flex items-center">
+      {/* Primary bar */}
+      <div className="h-14 flex items-center">
         <div className="max-w-screen-xl mx-auto px-4 w-full flex items-center justify-between gap-4">
-          {/* LEFT: optional back + brand */}
+
+          {/* LEFT: logo */}
           <div className="flex items-center gap-2 min-w-0">
             {!isHomePage && (
               <button
-                data-testid="back-btn"
-                onClick={() =>
-                  window.history.length > 1 ? navigate(-1) : navigate("/")
-                }
-                className={`p-1.5 rounded-md transition-colors ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-[#241A14]"
-                    : "text-slate-600 hover:bg-[#EFEADE]"
-                }`}
+                onClick={() => window.history.length > 1 ? navigate(-1) : navigate("/")}
+                className="p-1.5 rounded-md text-[#737373] hover:text-[#f0f0f0] hover:bg-[#1a1a1a] transition-colors"
                 aria-label="Go back"
               >
                 <ChevronLeft size={18} />
@@ -85,81 +69,47 @@ export const Header = () => {
             )}
 
             <button
-              data-testid="logo"
               onClick={() => navigate("/")}
-              className="flex items-center gap-2 select-none"
-              aria-label="Mint Street home"
+              className="flex items-center gap-2 select-none group"
+              aria-label="Launch Code home"
             >
-              <img src="/logo.svg" alt="Mint Street" className="w-8 h-8 rounded-md shadow-sm" />
-              <span
-                className={`font-display font-black text-[22px] leading-none tracking-tight ${
-                  darkMode ? "text-paper" : "text-ink"
-                }`}
-              >
-                Mint Street
+              <div className="w-7 h-7 rounded-md bg-[#7c3aed] flex items-center justify-center shadow-[0_0_12px_rgba(124,58,237,0.5)] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.7)] transition-shadow">
+                <Zap size={14} className="text-white" fill="white" />
+              </div>
+              <span className="font-mono text-[17px] font-semibold text-[#f0f0f0] tracking-tight leading-none">
+                Launch<span className="text-[#7c3aed]">Code</span>
               </span>
             </button>
           </div>
 
-          {/* CENTER: pill nav (desktop) */}
-          <nav
-            className="hidden md:flex items-center gap-1"
-            data-testid="nav-pill"
-          >
+          {/* CENTER: nav */}
+          <nav className="hidden md:flex items-center gap-0.5">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.slug}
                 type="button"
                 onClick={() => navigate(`/?cat=${link.slug}`)}
-                className={`group relative px-3 py-1.5 text-[13px] font-medium transition-colors ${
-                  darkMode
-                    ? "text-slate-300 hover:text-mint"
-                    : "text-ink/80 hover:text-mint"
-                }`}
+                className="group relative px-3.5 py-1.5 text-[13px] font-medium text-[#a3a3a3] hover:text-[#f0f0f0] transition-colors rounded-md hover:bg-[#1a1a1a]"
               >
                 {link.label}
-                <span className="pointer-events-none absolute left-1/2 -bottom-0.5 h-[2px] w-0 -translate-x-1/2 bg-mint transition-all duration-200 group-hover:w-[70%]" />
               </button>
             ))}
           </nav>
 
           {/* RIGHT: actions */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5">
             <button
-              data-testid="search-btn"
-              className={`p-2 rounded-full transition-colors ${
-                darkMode
-                  ? "text-slate-300 hover:bg-[#241A14]"
-                  : "text-ink/70 hover:bg-[#EFEADE]"
-              }`}
+              className="p-2 rounded-md text-[#737373] hover:text-[#f0f0f0] hover:bg-[#1a1a1a] transition-colors"
               aria-label="Search"
             >
               <Search size={16} />
             </button>
 
-            <button
-              data-testid="dark-mode-toggle"
-              onClick={toggleDarkMode}
-              className={`p-2 rounded-full transition-colors ${
-                darkMode
-                  ? "text-slate-300 hover:bg-[#241A14]"
-                  : "text-ink/70 hover:bg-[#EFEADE]"
-              }`}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
-
             {isAdmin && (
               <button
-                data-testid="admin-btn"
                 onClick={() => navigate("/admin")}
-                className={`p-2 rounded-full transition-colors ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-[#241A14]"
-                    : "text-ink/70 hover:bg-[#EFEADE]"
-                }`}
-                aria-label="Admin settings"
+                className="p-2 rounded-md text-[#737373] hover:text-[#f0f0f0] hover:bg-[#1a1a1a] transition-colors"
+                aria-label="Admin"
               >
                 <Settings size={16} />
               </button>
@@ -167,56 +117,34 @@ export const Header = () => {
 
             {isLoggedIn && (
               <button
-                data-testid="logout-btn"
                 onClick={handleLogout}
-                className={`p-2 rounded-full transition-colors ${
-                  darkMode
-                    ? "text-slate-300 hover:text-red-400 hover:bg-[#241A14]"
-                    : "text-ink/70 hover:text-red-500 hover:bg-[#EFEADE]"
-                }`}
+                className="p-2 rounded-md text-[#737373] hover:text-red-400 hover:bg-[#1a1a1a] transition-colors"
                 aria-label="Log out"
               >
                 <LogOut size={16} />
               </button>
             )}
 
-            <button
-              data-testid="subscribe-btn"
-              className="bg-mint text-white px-3 py-1.5 rounded-full text-[12px] font-semibold ml-1 hover:bg-mint-dark transition-colors"
-            >
+            <button className="ml-1 bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-3.5 py-1.5 rounded-md text-[12px] font-semibold transition-all hover:shadow-[0_0_12px_rgba(124,58,237,0.5)]">
               Subscribe
             </button>
           </div>
         </div>
       </div>
 
-      {/* ── Funding ticker strip ── */}
-      <div
-        className={`h-7 flex items-center overflow-hidden relative ${
-          darkMode
-            ? "bg-mint-dark text-paper"
-            : "bg-ink text-paper"
-        }`}
-        data-testid="ticker"
-      >
-        <span className="shrink-0 bg-saffron text-ink px-2 h-7 flex items-center text-[11px] font-bold uppercase tracking-wider z-10">
-          TICKER
+      {/* Ticker strip */}
+      <div className="h-7 flex items-center overflow-hidden relative bg-[#0d0d0d] border-t border-[#1a1a1a]">
+        <span className="shrink-0 bg-[#7c3aed] text-white px-3 h-7 flex items-center text-[10px] font-bold uppercase tracking-widest z-10">
+          WIRE
         </span>
         <div
-          className="flex text-[11px] font-semibold uppercase tracking-wider pl-4"
-          style={{ animation: "marquee 30s linear infinite" }}
+          className="flex text-[11px] font-medium tracking-wide pl-4"
+          style={{ animation: "marquee 40s linear infinite" }}
         >
           {tickerStream}
           {tickerStream}
         </div>
       </div>
-
-      {/* ── Hairline divider ── */}
-      <div
-        className={`border-b ${
-          darkMode ? "border-[#241A14]" : "border-[#E5E0D6]"
-        }`}
-      />
     </header>
   );
 };
