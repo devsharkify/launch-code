@@ -40,6 +40,11 @@ import AdvertisePage from "./pages/AdvertisePage";
 import WriteForUs from "./pages/WriteForUs";
 import SearchPage from "./pages/SearchPage";
 import LaunchesPage from "./pages/LaunchesPage";
+import CareersPage from "./pages/CareersPage";
+import TeamPage from "./pages/TeamPage";
+import EditorialStandardsPage from "./pages/EditorialStandardsPage";
+import VideoAIPage from "./pages/VideoAIPage";
+import AgentsPage from "./pages/AgentsPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://launchcode-production.up.railway.app";
 export const API = `${BACKEND_URL}/api`;
@@ -264,6 +269,11 @@ function AppContent() {
             <Route path="/write-for-us" element={<WriteForUs />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/launches" element={<LaunchesPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/editorial-standards" element={<EditorialStandardsPage />} />
+            <Route path="/video-ai" element={<VideoAIPage />} />
+            <Route path="/agents" element={<AgentsPage />} />
           </Routes>
         </main>
         <Footer />

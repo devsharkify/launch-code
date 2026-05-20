@@ -10,8 +10,8 @@ const NAV_LINKS = [
   { label: "Launches", slug: "launches", path: "/launches" },
   { label: "Models", slug: "ai-models", path: "/models" },
   { label: "Funding", slug: "funding", path: "/funding" },
-  { label: "Video AI", slug: "video-ai" },
-  { label: "Agents", slug: "agents" },
+  { label: "Video AI", slug: "video-ai", path: "/video-ai" },
+  { label: "Agents", slug: "agents", path: "/agents" },
 ];
 
 const TICKER_ITEMS = [
