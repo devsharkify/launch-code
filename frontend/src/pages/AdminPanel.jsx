@@ -415,7 +415,7 @@ export default function AdminPanel() {
               variant="outline"
               size="sm"
               data-testid="agents-btn"
-              onClick={() => navigate("/agents")}
+              onClick={() => navigate("/agents-monitor")}
               className="gap-1"
             >
               <Bot size={16} />

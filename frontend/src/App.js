@@ -211,7 +211,7 @@ function AppContent() {
     user, isLoggedIn, isAdmin, handleLogout
   };
 
-  const isAdminPage = location.pathname === "/admin" || location.pathname === "/analytics" || location.pathname === "/agents";
+  const isAdminPage = location.pathname === "/admin" || location.pathname === "/analytics" || location.pathname === "/agents-monitor";
   const isSwipeMode = false; // Keep header/nav on all pages
   const isReporterPage = location.pathname.startsWith("/reporter");
   const isLoginPage = location.pathname === "/reporter-login";
@@ -255,11 +255,10 @@ function AppContent() {
             <Route path="/reporter-login" element={<LoginPage onLoginSuccess={handleLoginSuccess} />} />
             <Route path="/epaper" element={<EpaperPage />} />
             <Route path="/news/:id" element={<ArticlePage />} />
-            <Route path="/agents" element={<AgentsDashboard />} />
+            <Route path="/agents-monitor" element={<AgentsDashboard />} />
             <Route path="/startup-apply" element={<StartupApply />} />
             <Route path="/models" element={<ModelsPage />} />
             <Route path="/funding" element={<FundingPage />} />
-            <Route path="*" element={<NotFoundPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -276,6 +275,7 @@ function AppContent() {
             <Route path="/video-ai" element={<VideoAIPage />} />
             <Route path="/agents" element={<AgentsPage />} />
             <Route path="/digest" element={<DigestPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <Footer />
