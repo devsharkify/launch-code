@@ -9,7 +9,7 @@ const COVERAGE = [
   { label: "Video AI", href: "/video-ai" },
   { label: "AI Agents", href: "/agents" },
   { label: "Foundation Models", href: "/?cat=foundation-models" },
-  { label: "Research", href: "/?cat=research" },
+  { label: "Research Hub", href: "/research" },
   { label: "Open Source AI", href: "/?cat=open-source" },
   { label: "AI Infrastructure", href: "/?cat=infra" },
   { label: "Computer Vision", href: "/?cat=vision" },
