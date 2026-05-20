@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --primary-mint: #0FAE7F;
-  --primary-mint-dark: #0A8B65;
-  --primary-mint-light: #E6F7F0;
+  --primary-mint: #F26B1F;
+  --primary-mint-dark: #C2410B;
+  --primary-mint-light: #FFF1E6;
   --accent-saffron: #F5C13D;
   --accent-saffron-dark: #D4A017;
   --bg-paper: #FAF7F1;
   --bg-surface: #FFFFFF;
-  --bg-dark: #0E1714;
-  --bg-dark-surface: #152420;
+  --bg-dark: #1C1410;
+  --bg-dark-surface: #241A14;
   --text-primary: #1A2421;
   --text-secondary: #4A5650;
   --text-muted: #6B7872;
@@ -81,7 +81,7 @@ body {
     --card-foreground: 165 11% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 165 11% 12%;
-    --primary: 159 84% 37%;
+    --primary: 22 89% 53%;
     --primary-foreground: 0 0% 100%;
     --secondary: 165 18% 20%;
     --secondary-foreground: 0 0% 100%;
@@ -93,7 +93,7 @@ body {
     --destructive-foreground: 165 11% 12%;
     --border: 38 25% 87%;
     --input: 38 25% 87%;
-    --ring: 159 84% 37%;
+    --ring: 22 89% 53%;
     --radius: 0.5rem;
   }
 }
@@ -171,12 +171,12 @@ body {
 
 /* Mint theme button */
 .btn-primary {
-  @apply bg-[#0FAE7F] text-white px-4 py-2 rounded-lg font-medium;
+  @apply bg-[#F26B1F] text-white px-4 py-2 rounded-lg font-medium;
   transition: background-color 0.2s, transform 0.1s;
 }
 
 .btn-primary:hover {
-  @apply bg-[#0A8B65];
+  @apply bg-[#C2410B];
   transform: translateY(-1px);
 }
 

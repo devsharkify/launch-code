@@ -60,9 +60,9 @@ module.exports = {
   				'5': 'hsl(var(--chart-5))'
   			},
   			mint: {
-  				DEFAULT: '#0FAE7F',
-  				dark: '#0A8B65',
-  				light: '#E6F7F0'
+  				DEFAULT: '#F26B1F',
+  				dark: '#C2410B',
+  				light: '#FFF1E6'
   			},
   			saffron: {
   				DEFAULT: '#F5C13D',

@@ -56,7 +56,7 @@ export const Header = () => {
   return (
     <header
       className={`sticky top-0 z-50 ${
-        darkMode ? "bg-[#0E1714]" : "bg-paper"
+        darkMode ? "bg-[#1C1410]" : "bg-paper"
       }`}
       data-testid="header"
     >
@@ -75,7 +75,7 @@ export const Header = () => {
                 }
                 className={`p-1.5 rounded-md transition-colors ${
                   darkMode
-                    ? "text-slate-300 hover:bg-[#152420]"
+                    ? "text-slate-300 hover:bg-[#241A14]"
                     : "text-slate-600 hover:bg-[#EFEADE]"
                 }`}
                 aria-label="Go back"
@@ -132,7 +132,7 @@ export const Header = () => {
               data-testid="search-btn"
               className={`p-2 rounded-full transition-colors ${
                 darkMode
-                  ? "text-slate-300 hover:bg-[#152420]"
+                  ? "text-slate-300 hover:bg-[#241A14]"
                   : "text-ink/70 hover:bg-[#EFEADE]"
               }`}
               aria-label="Search"
@@ -145,7 +145,7 @@ export const Header = () => {
               onClick={toggleDarkMode}
               className={`p-2 rounded-full transition-colors ${
                 darkMode
-                  ? "text-slate-300 hover:bg-[#152420]"
+                  ? "text-slate-300 hover:bg-[#241A14]"
                   : "text-ink/70 hover:bg-[#EFEADE]"
               }`}
               aria-label="Toggle dark mode"
@@ -159,7 +159,7 @@ export const Header = () => {
                 onClick={() => navigate("/admin")}
                 className={`p-2 rounded-full transition-colors ${
                   darkMode
-                    ? "text-slate-300 hover:bg-[#152420]"
+                    ? "text-slate-300 hover:bg-[#241A14]"
                     : "text-ink/70 hover:bg-[#EFEADE]"
                 }`}
                 aria-label="Admin settings"
@@ -174,7 +174,7 @@ export const Header = () => {
                 onClick={handleLogout}
                 className={`p-2 rounded-full transition-colors ${
                   darkMode
-                    ? "text-slate-300 hover:text-red-400 hover:bg-[#152420]"
+                    ? "text-slate-300 hover:text-red-400 hover:bg-[#241A14]"
                     : "text-ink/70 hover:text-red-500 hover:bg-[#EFEADE]"
                 }`}
                 aria-label="Log out"
@@ -217,7 +217,7 @@ export const Header = () => {
       {/* ── Hairline divider ── */}
       <div
         className={`border-b ${
-          darkMode ? "border-[#152420]" : "border-[#E5E0D6]"
+          darkMode ? "border-[#241A14]" : "border-[#E5E0D6]"
         }`}
       />
     </header>

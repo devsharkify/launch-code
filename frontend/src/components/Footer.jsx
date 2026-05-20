@@ -56,7 +56,7 @@ export const Footer = () => {
     <footer
       data-testid="footer"
       className={`mt-12 border-t-2 border-mint ${
-        darkMode ? "bg-[#0E1714]" : "bg-[#FAF7F1]"
+        darkMode ? "bg-[#1C1410]" : "bg-[#FAF7F1]"
       }`}
     >
       <div className="max-w-screen-xl mx-auto px-6 py-10">
@@ -243,7 +243,7 @@ export const Footer = () => {
               darkMode ? "text-[#7A8581]" : "text-ink-muted"
             }`}
           >
-            © {year} Mint Street Media Pvt Ltd. Made with mint tea in Hyderabad.
+            © {year} Mint Street Media Pvt Ltd. Made with masala chai in Hyderabad.
           </p>
         </div>
       </div>

@@ -90,14 +90,14 @@ export const NewsCard = ({ article, articlesList = [] }) => {
         group news-card rounded-sm overflow-hidden border transition-all duration-200
         hover:border-mint hover:shadow-[0_6px_24px_rgba(15,174,127,0.10)]
         ${darkMode
-          ? "bg-[#152420] border-[#1F2D29]"
+          ? "bg-[#241A14] border-[#3A2A1F]"
           : "bg-white border-[#E5E0D6]"}
       `}
     >
       {/* Top stripe — category (left) + source (right) */}
       <div
         className={`flex items-center justify-between px-3 py-2 border-b ${
-          darkMode ? "border-[#1F2D29]" : "border-[#EFEAE0]"
+          darkMode ? "border-[#3A2A1F]" : "border-[#EFEAE0]"
         }`}
       >
         <div className="min-w-0 flex-1">

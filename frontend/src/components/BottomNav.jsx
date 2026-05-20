@@ -19,7 +19,7 @@ export const BottomNav = () => {
     <nav
       className={`bottom-nav ${
         darkMode
-          ? "bg-[#0E1714] border-t border-[#1F2D29]"
+          ? "bg-[#1C1410] border-t border-[#3A2A1F]"
           : "bg-[#FAF7F1] border-t border-[#E5E0D6]"
       }`}
       data-testid="bottom-nav"
@@ -36,7 +36,7 @@ export const BottomNav = () => {
               onClick={() => navigate(item.path)}
               className={`flex flex-col items-center justify-center w-16 h-full transition-colors ${
                 isActive
-                  ? "text-[#0FAE7F]"
+                  ? "text-[#F26B1F]"
                   : darkMode
                     ? "text-slate-500 hover:text-slate-300"
                     : "text-slate-400 hover:text-slate-600"

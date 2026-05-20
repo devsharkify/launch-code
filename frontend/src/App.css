@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
 
 :root {
-  --primary: #0FAE7F;
-  --primary-hover: #0A8B65;
-  --primary-light: #E6F7F0;
+  --primary: #F26B1F;
+  --primary-hover: #C2410B;
+  --primary-light: #FFF1E6;
   --bg-light: #FAF7F1;
-  --bg-dark: #0E1714;
+  --bg-dark: #1C1410;
   --paper-light: #FFFFFF;
-  --paper-dark: #152420;
+  --paper-dark: #241A14;
 }
 
 * {
@@ -85,10 +85,10 @@
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: #0FAE7F;
+    background: #F26B1F;
     border-radius: 3px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: #0A8B65; }
+  ::-webkit-scrollbar-thumb:hover { background: #C2410B; }
 }
 
 /* Active indicator dot pulse */

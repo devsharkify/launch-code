@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../App";
 
-const BRAND = "#0FAE7F";
+const BRAND = "#F26B1F";
 
 function Section({ title, children, darkMode }) {
   return (
@@ -47,12 +47,12 @@ export default function Disclaimer() {
   const navigate = useNavigate();
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-[#0E1714] text-slate-100" : "bg-[#FAF7F1] text-slate-800"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-slate-100" : "bg-[#FAF7F1] text-slate-800"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] mb-8" aria-label="Breadcrumb">
-          <Link to="/" className={`hover:underline ${darkMode ? "text-blue-400" : "text-[#0FAE7F]"}`}>
+          <Link to="/" className={`hover:underline ${darkMode ? "text-blue-400" : "text-[#F26B1F]"}`}>
             Home
           </Link>
           <span className={darkMode ? "text-slate-500" : "text-slate-400"}>/</span>

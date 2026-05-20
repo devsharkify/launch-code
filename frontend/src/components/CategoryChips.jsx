@@ -32,12 +32,12 @@ export const CategoryChips = ({ activeCategory, onCategoryChange }) => {
   return (
     <div
       className={`sticky top-[88px] z-40 ${
-        darkMode ? "bg-[#0E1714]" : "bg-[#FAF7F1]"
+        darkMode ? "bg-[#1C1410]" : "bg-[#FAF7F1]"
       }`}
       data-testid="category-chips"
     >
       {/* Mint hairline across the top of the nav strip */}
-      <div className="h-[2px] bg-[#0FAE7F]" />
+      <div className="h-[2px] bg-[#F26B1F]" />
 
       {/* Scrollable chip row */}
       <div
@@ -65,16 +65,16 @@ export const CategoryChips = ({ activeCategory, onCategoryChange }) => {
                 rounded-full px-4 py-1.5
                 transition-colors duration-150
                 whitespace-nowrap
-                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0FAE7F] focus-visible:ring-offset-1
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F26B1F] focus-visible:ring-offset-1
                 ${isTelugu
                   ? "font-telugu normal-case text-[13px] font-semibold tracking-normal"
                   : "text-[12px] font-semibold uppercase tracking-wider"
                 }
                 ${isActive
-                  ? "bg-[#0FAE7F] text-white border border-[#0FAE7F]"
+                  ? "bg-[#F26B1F] text-white border border-[#F26B1F]"
                   : darkMode
-                    ? "bg-[#152420] border border-[#1F2D29] text-[#FAF7F1] hover:border-[#0FAE7F] hover:text-[#0FAE7F]"
-                    : "bg-white border border-[#E5E0D6] text-[#0E1714] hover:border-[#0FAE7F] hover:text-[#0FAE7F]"
+                    ? "bg-[#241A14] border border-[#3A2A1F] text-[#FAF7F1] hover:border-[#F26B1F] hover:text-[#F26B1F]"
+                    : "bg-white border border-[#E5E0D6] text-[#1C1410] hover:border-[#F26B1F] hover:text-[#F26B1F]"
                 }
               `}
             >
@@ -86,7 +86,7 @@ export const CategoryChips = ({ activeCategory, onCategoryChange }) => {
 
       {/* Bottom divider */}
       <div
-        className={`h-px ${darkMode ? "bg-[#1F2D29]" : "bg-[#E5E0D6]"}`}
+        className={`h-px ${darkMode ? "bg-[#3A2A1F]" : "bg-[#E5E0D6]"}`}
       />
     </div>
   );
