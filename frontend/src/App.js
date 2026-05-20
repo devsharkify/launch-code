@@ -38,6 +38,7 @@ import CookiePolicy from "./pages/CookiePolicy";
 import Disclaimer from "./pages/Disclaimer";
 import AdvertisePage from "./pages/AdvertisePage";
 import WriteForUs from "./pages/WriteForUs";
+import SearchPage from "./pages/SearchPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://launchcode-production.up.railway.app";
 export const API = `${BACKEND_URL}/api`;
@@ -260,6 +261,7 @@ function AppContent() {
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/advertise" element={<AdvertisePage />} />
             <Route path="/write-for-us" element={<WriteForUs />} />
+            <Route path="/search" element={<SearchPage />} />
           </Routes>
         </main>
         <Footer />

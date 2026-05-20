@@ -56,7 +56,7 @@ export const FundingWire = () => {
           return (
             <button
               key={i}
-              onClick={() => navigate("/?cat=funding")}
+              onClick={() => navigate("/funding")}
               className="w-full flex items-center gap-3 px-4 py-2.5 hover:bg-[#111] transition-colors group border-b border-[#1a1a1a] last:border-0 text-left"
             >
               <div className="flex-1 min-w-0">
@@ -90,7 +90,7 @@ export const FundingWire = () => {
 
       <div className="px-4 py-2 border-t border-[#1a1a1a]">
         <button
-          onClick={() => navigate("/?cat=funding")}
+          onClick={() => navigate("/funding")}
           className="text-[11px] text-[#404040] hover:text-[#7c3aed] transition-colors w-full text-center font-medium"
         >
           View all funding rounds →

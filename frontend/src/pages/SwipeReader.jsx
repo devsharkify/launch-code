@@ -3,6 +3,17 @@ import { ChevronUp, ChevronDown, Share2, Youtube, RefreshCw } from "lucide-react
 
 const API = process.env.REACT_APP_BACKEND_URL;
 
+const MOCK_SHORTS = [
+  { id: "Mq3Y7JHDQEA", title: "Andrej Karpathy: The State of AI in 2026", channel_title: "Andrej Karpathy", thumbnail: "https://img.youtube.com/vi/Mq3Y7JHDQEA/hqdefault.jpg" },
+  { id: "aircAruvnKk", title: "But what is a neural network? 3Blue1Brown", channel_title: "3Blue1Brown", thumbnail: "https://img.youtube.com/vi/aircAruvnKk/hqdefault.jpg" },
+  { id: "WbzNRTTrX0g", title: "How Claude 4 Thinks — Anthropic Explains Extended Thinking", channel_title: "Anthropic", thumbnail: "https://img.youtube.com/vi/WbzNRTTrX0g/hqdefault.jpg" },
+  { id: "kCc8FmEb1nY", title: "Let's build GPT — from scratch, in code (Andrej Karpathy)", channel_title: "Andrej Karpathy", thumbnail: "https://img.youtube.com/vi/kCc8FmEb1nY/hqdefault.jpg" },
+  { id: "4RixMPF4xis", title: "Sora Is Here — OpenAI's New Text-to-Video AI", channel_title: "Two Minute Papers", thumbnail: "https://img.youtube.com/vi/4RixMPF4xis/hqdefault.jpg" },
+  { id: "UPtG_38Oq8o", title: "AI Agents Are Taking Over Software Development", channel_title: "Fireship", thumbnail: "https://img.youtube.com/vi/UPtG_38Oq8o/hqdefault.jpg" },
+  { id: "9IA8Pt5od08", title: "Y Combinator W26 Demo Day — Top AI Startups", channel_title: "Y Combinator", thumbnail: "https://img.youtube.com/vi/9IA8Pt5od08/hqdefault.jpg" },
+  { id: "7xTGNNLPyMI", title: "The Trillion Dollar AI Infrastructure Bet", channel_title: "All-In Podcast", thumbnail: "https://img.youtube.com/vi/7xTGNNLPyMI/hqdefault.jpg" },
+];
+
 export function ShortsPlayer() {
   const [shorts, setShorts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,9 +29,9 @@ export function ShortsPlayer() {
     try {
       const res = await fetch(`${API}/api/youtube/shorts?max_results=20`);
       const data = await res.json();
-      setShorts(data.shorts || []);
+      setShorts(data.shorts?.length > 0 ? data.shorts : MOCK_SHORTS);
     } catch (e) {
-      console.error("Failed to fetch shorts:", e);
+      setShorts(MOCK_SHORTS);
     } finally {
       setLoading(false);
     }

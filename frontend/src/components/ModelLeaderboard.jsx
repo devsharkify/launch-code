@@ -20,10 +20,10 @@ export const ModelLeaderboard = () => {
           <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#f0f0f0]">Model Leaderboard</span>
         </div>
         <button
-          onClick={() => navigate("/?cat=ai-models")}
+          onClick={() => navigate("/models")}
           className="text-[11px] text-[#404040] hover:text-[#7c3aed] transition-colors font-medium flex items-center gap-1"
         >
-          All models <TrendingUp size={10} />
+          Full board <TrendingUp size={10} />
         </button>
       </div>
 

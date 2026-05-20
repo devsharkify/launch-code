@@ -113,7 +113,7 @@ export const CommandPalette = ({ open, onClose }) => {
 
           {query && query.length >= 2 && (
             <button
-              onClick={() => handleNavigate(`/?q=${encodeURIComponent(query)}`)}
+              onClick={() => handleNavigate(`/search?q=${encodeURIComponent(query)}`)}
               className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#1a1a1a] transition-colors group"
             >
               <Search size={14} className="text-[#7c3aed] shrink-0" />

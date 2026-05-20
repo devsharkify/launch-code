@@ -4,6 +4,8 @@ import { AppContext } from "../App";
 import { Settings, LogOut, Search, ChevronLeft, Zap } from "lucide-react";
 import { CommandPalette } from "./CommandPalette";
 
+const isSearchPage = (pathname) => pathname === "/search";
+
 const NAV_LINKS = [
   { label: "AI Models", slug: "ai-models", path: "/models" },
   { label: "Funding", slug: "funding", path: "/funding" },
@@ -105,9 +107,9 @@ export const Header = () => {
             </nav>
 
             <div className="flex items-center gap-0.5">
-              {/* Search with ⌘K hint */}
+              {/* Search */}
               <button
-                onClick={() => setCmdOpen(true)}
+                onClick={() => navigate("/search")}
                 className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-md border border-[#1f1f1f] bg-[#111] text-[#404040] hover:border-[#262626] hover:text-[#737373] transition-colors text-[12px] mr-1"
                 aria-label="Search"
               >
@@ -116,7 +118,7 @@ export const Header = () => {
                 <kbd className="ml-1 text-[10px] font-mono bg-[#1a1a1a] border border-[#262626] px-1 py-0.5 rounded">⌘K</kbd>
               </button>
               <button
-                onClick={() => setCmdOpen(true)}
+                onClick={() => navigate("/search")}
                 className="sm:hidden p-2 rounded-md text-[#737373] hover:text-[#f0f0f0] hover:bg-[#1a1a1a] transition-colors"
                 aria-label="Search"
               >
