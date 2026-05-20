@@ -135,7 +135,7 @@ export default function ReporterRegister() {
 
         {/* Registration Form */}
         {!existingReporter && (
-          <form onSubmit={handleSubmit} className={`p-6 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+          <form onSubmit={handleSubmit} className={`p-6 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
             <div className="space-y-4">
               {/* Name */}
               <div className="space-y-2">

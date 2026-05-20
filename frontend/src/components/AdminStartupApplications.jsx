@@ -117,18 +117,18 @@ export const AdminStartupApplications = () => {
   return (
     <div data-testid="admin-startup-section">
       {/* Header + actions */}
-      <div className={`rounded-xl p-4 mb-4 border ${darkMode ? "bg-slate-800 border-slate-700" : "bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200"}`}>
+      <div className={`rounded-xl p-4 mb-4 border bg-[#111] border-[#1f1f1f]`}>
         <div className="flex items-start justify-between gap-3 flex-wrap">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#7c3aed] to-amber-500 flex items-center justify-center text-white">
               <Rocket size={20} />
             </div>
             <div>
-              <h2 className={`text-lg font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>
+              <h2 className={`text-lg font-bold text-white`}>
                 Startup Applications · Hyderabad's Next 100
               </h2>
-              <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-600"}`}>
-                {applications.length} total · stored in MongoDB <code className="text-orange-600">startup_applications</code>
+              <p className={`text-xs text-[#a3a3a3]`}>
+                {applications.length} total · stored in MongoDB <code className="text-[#7c3aed]">startup_applications</code>
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export const AdminStartupApplications = () => {
         <div className="flex flex-wrap gap-2 mt-4">
           <button
             onClick={() => setStatusFilter("all")}
-            className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${statusFilter === "all" ? "bg-orange-500 text-white" : darkMode ? "bg-slate-700 text-slate-300" : "bg-white border border-slate-200 text-slate-600"}`}
+            className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${statusFilter === "all" ? "bg-[#7c3aed] text-white" : darkMode ? "bg-[#1a1a1a] text-[#d4d4d4]" : "bg-[#0d0d0d] border border-[#a3a3a3] text-[#404040]"}`}
           >
             All ({applications.length})
           </button>
@@ -154,7 +154,7 @@ export const AdminStartupApplications = () => {
             <button
               key={s}
               onClick={() => setStatusFilter(s)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold capitalize transition-all ${statusFilter === s ? "bg-orange-500 text-white" : darkMode ? "bg-slate-700 text-slate-300" : "bg-white border border-slate-200 text-slate-600"}`}
+              className={`px-3 py-1 rounded-full text-xs font-semibold capitalize transition-all ${statusFilter === s ? "bg-[#7c3aed] text-white" : darkMode ? "bg-[#1a1a1a] text-[#d4d4d4]" : "bg-[#0d0d0d] border border-[#a3a3a3] text-[#404040]"}`}
             >
               {s} ({counts[s] || 0})
             </button>
@@ -168,14 +168,14 @@ export const AdminStartupApplications = () => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search by name, mobile, email, idea, area..."
-        className={`mb-4 ${darkMode ? "bg-slate-800 border-slate-700 text-white" : ""}`}
+        className={`mb-4 ${darkMode ? "bg-[#111] border-[#1f1f1f] text-white" : ""}`}
       />
 
       {/* Table */}
-      <div className={`rounded-lg border overflow-hidden ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
+      <div className={`rounded-lg border overflow-hidden bg-[#111] border-[#1f1f1f]`}>
         <Table>
           <TableHeader>
-            <TableRow className={darkMode ? "bg-slate-700" : "bg-slate-50"}>
+            <TableRow className={darkMode ? "bg-[#1a1a1a]" : "bg-[#111]"}>
               <TableHead>Founder</TableHead>
               <TableHead>Contact</TableHead>
               <TableHead>Location</TableHead>
@@ -197,31 +197,31 @@ export const AdminStartupApplications = () => {
                 </div>
               </TableCell></TableRow>
             ) : filtered.length === 0 ? (
-              <TableRow><TableCell colSpan={7} className="text-center py-8 text-slate-500">No applications {searchQuery ? "match your search" : "yet"}</TableCell></TableRow>
+              <TableRow><TableCell colSpan={7} className="text-center py-8 text-[#737373]">No applications {searchQuery ? "match your search" : "yet"}</TableCell></TableRow>
             ) : (
               filtered.map((app) => (
                 <TableRow key={app.id} data-testid={`startup-app-row-${app.id}`}>
                   <TableCell>
                     <div className="flex items-center gap-2">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${app.is_woman_founder ? "bg-pink-100 text-pink-700" : "bg-orange-100 text-orange-700"}`}>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${app.is_woman_founder ? "bg-pink-100 text-pink-700" : "bg-[#7c3aed]/15 text-orange-700"}`}>
                         {app.name?.charAt(0).toUpperCase()}
                       </div>
                       <div>
-                        <p className={`font-medium text-sm ${darkMode ? "text-white" : "text-slate-900"}`}>{app.name}</p>
-                        {app.age && <p className="text-[11px] text-slate-500">Age {app.age}{app.is_woman_founder ? " · Woman founder" : ""}</p>}
+                        <p className={`font-medium text-sm text-white`}>{app.name}</p>
+                        {app.age && <p className="text-[11px] text-[#737373]">Age {app.age}{app.is_woman_founder ? " · Woman founder" : ""}</p>}
                       </div>
                     </div>
                   </TableCell>
                   <TableCell>
-                    <p className="text-xs text-slate-700 dark:text-slate-300">+91 {app.mobile}</p>
-                    <p className="text-[11px] text-slate-500">{app.email}</p>
+                    <p className="text-xs text-[#262626] dark:text-[#d4d4d4]">+91 {app.mobile}</p>
+                    <p className="text-[11px] text-[#737373]">{app.email}</p>
                   </TableCell>
-                  <TableCell className="text-xs text-slate-600 dark:text-slate-400">
+                  <TableCell className="text-xs text-[#404040] dark:text-[#a3a3a3]">
                     {[app.colony, app.area, app.city].filter(Boolean).join(", ") || "N/A"}
                   </TableCell>
-                  <TableCell><p className="text-xs text-slate-700 dark:text-slate-300 line-clamp-2 max-w-xs">{app.idea}</p></TableCell>
+                  <TableCell><p className="text-xs text-[#262626] dark:text-[#d4d4d4] line-clamp-2 max-w-xs">{app.idea}</p></TableCell>
                   <TableCell>{getStatusBadge(app.status)}</TableCell>
-                  <TableCell className="text-xs text-slate-500">{fmtTime(app.created_at)}</TableCell>
+                  <TableCell className="text-xs text-[#737373]">{fmtTime(app.created_at)}</TableCell>
                   <TableCell>
                     <div className="flex justify-end gap-1.5">
                       <Button data-testid={`startup-view-${app.id}`} size="sm" variant="ghost" className="h-8" onClick={() => setSelectedApp(app)}><Eye size={14} /></Button>
@@ -246,7 +246,7 @@ export const AdminStartupApplications = () => {
 
       {/* Detail dialog */}
       <Dialog open={!!selectedApp} onOpenChange={() => setSelectedApp(null)}>
-        <DialogContent className={`max-w-2xl ${darkMode ? "bg-slate-800 border-slate-700" : ""}`}>
+        <DialogContent className={`max-w-2xl ${darkMode ? "bg-[#111] border-[#1f1f1f]" : ""}`}>
           <DialogHeader>
             <DialogTitle className={darkMode ? "text-white" : ""}>Application Details</DialogTitle>
           </DialogHeader>
@@ -254,8 +254,8 @@ export const AdminStartupApplications = () => {
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h3 className={`text-xl font-bold ${darkMode ? "text-white" : "text-slate-900"}`}>{selectedApp.name}</h3>
-                  <p className={`text-sm ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+                  <h3 className={`text-xl font-bold text-white`}>{selectedApp.name}</h3>
+                  <p className={`text-sm text-[#a3a3a3]`}>
                     Applied {fmtTime(selectedApp.created_at)}
                   </p>
                 </div>
@@ -274,8 +274,8 @@ export const AdminStartupApplications = () => {
               </div>
 
               <div>
-                <p className={`text-xs font-semibold mb-1 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>BUSINESS IDEA</p>
-                <p className={`text-sm leading-relaxed p-3 rounded-lg ${darkMode ? "bg-slate-900 text-slate-200" : "bg-slate-50 text-slate-800"}`}>
+                <p className={`text-xs font-semibold mb-1 text-[#a3a3a3]`}>BUSINESS IDEA</p>
+                <p className={`text-sm leading-relaxed p-3 rounded-lg bg-[#0d0d0d] text-[#e5e5e5]`}>
                   {selectedApp.idea}
                 </p>
               </div>
@@ -283,7 +283,7 @@ export const AdminStartupApplications = () => {
               {(selectedApp.pitch_pdf_url || selectedApp.pitch_video_url) && (
                 <div className="flex gap-2">
                   {selectedApp.pitch_pdf_url && (
-                    <a href={selectedApp.pitch_pdf_url} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-orange-100 text-orange-700 hover:bg-orange-200 text-sm font-medium">
+                    <a href={selectedApp.pitch_pdf_url} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-[#7c3aed]/15 text-orange-700 hover:bg-orange-200 text-sm font-medium">
                       <FileText size={14} /> View Pitch Deck
                     </a>
                   )}
@@ -318,7 +318,7 @@ export const AdminStartupApplications = () => {
 
 const DetailRow = ({ icon, label, value, darkMode }) => (
   <div>
-    <p className={`text-[11px] font-semibold uppercase tracking-wide flex items-center gap-1 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>{icon} {label}</p>
-    <p className={`text-sm mt-0.5 ${darkMode ? "text-slate-200" : "text-slate-800"}`}>{value}</p>
+    <p className={`text-[11px] font-semibold uppercase tracking-wide flex items-center gap-1 text-[#737373]`}>{icon} {label}</p>
+    <p className={`text-sm mt-0.5 text-[#e5e5e5]`}>{value}</p>
   </div>
 );

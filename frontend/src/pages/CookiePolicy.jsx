@@ -65,7 +65,7 @@ export default function CookiePolicy() {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-[#f0f0f0]" : "bg-white text-[#f0f0f0]"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-[#f0f0f0]" : "bg-[#0d0d0d] text-[#f0f0f0]"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}
@@ -266,13 +266,13 @@ export default function CookiePolicy() {
             <table className="w-full text-[14px] border-collapse">
               <thead>
                 <tr className={darkMode ? "bg-[#0d0d0d]" : "bg-[#111]"}>
-                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-[#e5e5e5] border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
                     Cookie Name
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f]">
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-[#e5e5e5] border-b border-[#1f1f1f] dark:border-[#1f1f1f]">
                     Purpose
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-slate-200 border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
+                  <th className="px-4 py-3 text-left font-semibold text-[#a3a3a3] dark:text-[#e5e5e5] border-b border-[#1f1f1f] dark:border-[#1f1f1f] whitespace-nowrap">
                     Duration
                   </th>
                 </tr>
@@ -283,7 +283,7 @@ export default function CookiePolicy() {
                     key={i}
                     className={`border-b last:border-0 border-[#1f1f1f] dark:border-[#1f1f1f] ${
                       i % 2 === 0
-                        ? darkMode ? "bg-[#1C1410]" : "bg-white"
+                        ? darkMode ? "bg-[#1C1410]" : "bg-[#0d0d0d]"
                         : darkMode ? "bg-[#0d0d0d]/50" : "bg-[#111]"
                     }`}
                   >

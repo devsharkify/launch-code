@@ -150,7 +150,7 @@ export default function AdvertisePage() {
             a rate card and recommended formats.
           </p>
           <p className="text-[14px] text-[#737373] dark:text-[#555]">
-            <span className="font-semibold text-[#a3a3a3] dark:text-slate-200">Email:</span>{" "}
+            <span className="font-semibold text-[#a3a3a3] dark:text-[#e5e5e5]">Email:</span>{" "}
             <a
               href="mailto:advertise@launchcode.ai"
               className="hover:underline font-medium text-[#7c3aed]"

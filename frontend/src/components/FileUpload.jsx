@@ -80,29 +80,29 @@ export const FileUpload = ({ type = "image", onUpload, currentUrl = "" }) => {
             flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-lg cursor-pointer
             transition-colors
             ${darkMode 
-              ? "border-slate-600 hover:border-orange-500 bg-slate-700/50" 
-              : "border-slate-300 hover:border-orange-500 bg-slate-50"
+              ? "border-[#262626] hover:border-[#7c3aed] bg-[#1a1a1a]/50" 
+              : "border-[#737373] hover:border-[#7c3aed] bg-[#111]"
             }
             ${uploading ? "pointer-events-none opacity-60" : ""}
           `}
         >
           {uploading ? (
-            <Loader2 size={32} className="animate-spin text-orange-500 mb-2" />
+            <Loader2 size={32} className="animate-spin text-[#7c3aed] mb-2" />
           ) : (
-            <Icon size={32} className={darkMode ? "text-slate-400 mb-2" : "text-slate-500 mb-2"} />
+            <Icon size={32} className={darkMode ? "text-[#a3a3a3] mb-2" : "text-[#737373] mb-2"} />
           )}
-          <span className={`text-sm font-medium ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
+          <span className={`text-sm font-medium text-[#d4d4d4]`}>
             {uploading
               ? "Uploading..."
               : `Click to upload ${isImage ? "image" : "video"}`
             }
           </span>
-          <span className={`text-xs mt-1 ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
+          <span className={`text-xs mt-1 text-[#737373]`}>
             Max {maxSize}MB
           </span>
         </label>
       ) : (
-        <div className={`relative rounded-lg overflow-hidden ${darkMode ? "bg-slate-700" : "bg-slate-100"}`}>
+        <div className={`relative rounded-lg overflow-hidden bg-[#1a1a1a]`}>
           {isImage ? (
             <img 
               src={uploadedUrl} 

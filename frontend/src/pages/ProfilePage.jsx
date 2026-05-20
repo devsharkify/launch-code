@@ -10,9 +10,9 @@ export default function ProfilePage() {
   const phone = localStorage.getItem("userPhone");
 
   return (
-    <div data-testid="profile-page" className={`min-h-screen pb-24 ${darkMode ? "bg-slate-900" : "bg-slate-50"}`}>
+    <div data-testid="profile-page" className={`min-h-screen pb-24 bg-[#0d0d0d]`}>
       {/* Profile Header */}
-      <div className="bg-gradient-to-br from-orange-500 to-orange-600 px-6 pt-8 pb-12">
+      <div className="bg-gradient-to-br from-[#7c3aed] to-[#6d28d9] px-6 pt-8 pb-12">
         <div className="flex items-center gap-4">
           <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/40">
             <User size={28} className="text-white" />
@@ -40,8 +40,8 @@ export default function ProfilePage() {
       {/* Content */}
       <div className="px-4 -mt-6">
         {/* Settings Card */}
-        <div className={`rounded-2xl shadow-sm border overflow-hidden mb-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <h2 className={`px-4 pt-4 pb-2 text-xs font-semibold uppercase tracking-wider ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+        <div className={`rounded-2xl shadow-sm border overflow-hidden mb-4 bg-[#111] border-[#1f1f1f]`}>
+          <h2 className={`px-4 pt-4 pb-2 text-xs font-semibold uppercase tracking-wider text-[#a3a3a3]`}>
             Settings
           </h2>
 
@@ -49,24 +49,24 @@ export default function ProfilePage() {
           <button
             data-testid="toggle-darkmode-profile"
             onClick={toggleDarkMode}
-            className={`w-full px-4 py-3.5 flex items-center justify-between border-b ${darkMode ? "border-slate-700 hover:bg-slate-700" : "border-slate-100 hover:bg-slate-50"} transition-colors`}
+            className={`w-full px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f1f] hover:bg-[#1a1a1a] transition-colors`}
           >
             <div className="flex items-center gap-3">
-              {darkMode ? <Moon size={20} className="text-yellow-400" /> : <Sun size={20} className="text-orange-500" />}
-              <span className={`font-medium ${darkMode ? "text-white" : "text-slate-800"}`}>
+              {darkMode ? <Moon size={20} className="text-yellow-400" /> : <Sun size={20} className="text-[#7c3aed]" />}
+              <span className={`font-medium text-white`}>
                 {darkMode ? "Dark Mode" : "Light Mode"}
               </span>
             </div>
-            <div className={`w-10 h-6 rounded-full flex items-center px-0.5 transition-colors ${darkMode ? "bg-orange-500" : "bg-slate-300"}`}>
-              <div className={`w-5 h-5 rounded-full bg-white shadow transition-transform ${darkMode ? "translate-x-4" : ""}`} />
+            <div className={`w-10 h-6 rounded-full flex items-center px-0.5 transition-colors bg-[#7c3aed]`}>
+              <div className={`w-5 h-5 rounded-full bg-[#0d0d0d] shadow transition-transform ${darkMode ? "translate-x-4" : ""}`} />
             </div>
           </button>
 
         </div>
 
         {/* Actions Card */}
-        <div className={`rounded-2xl shadow-sm border overflow-hidden mb-4 ${darkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200"}`}>
-          <h2 className={`px-4 pt-4 pb-2 text-xs font-semibold uppercase tracking-wider ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+        <div className={`rounded-2xl shadow-sm border overflow-hidden mb-4 bg-[#111] border-[#1f1f1f]`}>
+          <h2 className={`px-4 pt-4 pb-2 text-xs font-semibold uppercase tracking-wider text-[#a3a3a3]`}>
             Quick Actions
           </h2>
 
@@ -75,27 +75,27 @@ export default function ProfilePage() {
               <button
                 data-testid="join-reporter-profile"
                 onClick={() => navigate("/reporter/register")}
-                className={`w-full px-4 py-3.5 flex items-center justify-between border-b ${darkMode ? "border-slate-700 hover:bg-slate-700" : "border-slate-100 hover:bg-slate-50"} transition-colors`}
+                className={`w-full px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f1f] hover:bg-[#1a1a1a] transition-colors`}
               >
                 <div className="flex items-center gap-3">
                   <UserPlus size={20} className="text-green-500" />
                   <div className="text-left">
-                    <p className={`font-medium ${darkMode ? "text-white" : "text-slate-800"}`}>Become a Reporter</p>
-                    <p className={`text-xs ${darkMode ? "text-slate-400" : "text-slate-500"}`}>Apply to share local news</p>
+                    <p className={`font-medium text-white`}>Become a Reporter</p>
+                    <p className={`text-xs text-[#a3a3a3]`}>Apply to share local news</p>
                   </div>
                 </div>
-                <ChevronRight size={18} className={darkMode ? "text-slate-500" : "text-slate-400"} />
+                <ChevronRight size={18} className={darkMode ? "text-[#737373]" : "text-[#a3a3a3]"} />
               </button>
               <button
                 data-testid="login-reporter-profile"
                 onClick={() => navigate("/reporter-login")}
-                className={`w-full px-4 py-3.5 flex items-center justify-between border-b ${darkMode ? "border-slate-700 hover:bg-slate-700" : "border-slate-100 hover:bg-slate-50"} transition-colors`}
+                className={`w-full px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f1f] hover:bg-[#1a1a1a] transition-colors`}
               >
                 <div className="flex items-center gap-3">
-                  <Phone size={20} className="text-orange-500" />
-                  <span className={`font-medium ${darkMode ? "text-white" : "text-slate-800"}`}>Reporter Login</span>
+                  <Phone size={20} className="text-[#7c3aed]" />
+                  <span className={`font-medium text-white`}>Reporter Login</span>
                 </div>
-                <ChevronRight size={18} className={darkMode ? "text-slate-500" : "text-slate-400"} />
+                <ChevronRight size={18} className={darkMode ? "text-[#737373]" : "text-[#a3a3a3]"} />
               </button>
             </>
           )}
@@ -104,13 +104,13 @@ export default function ProfilePage() {
             <button
               data-testid="reporter-dashboard-profile"
               onClick={() => navigate("/reporter/register")}
-              className={`w-full px-4 py-3.5 flex items-center justify-between border-b ${darkMode ? "border-slate-700 hover:bg-slate-700" : "border-slate-100 hover:bg-slate-50"} transition-colors`}
+              className={`w-full px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f1f] hover:bg-[#1a1a1a] transition-colors`}
             >
               <div className="flex items-center gap-3">
                 <UserPlus size={20} className="text-green-500" />
-                <span className={`font-medium ${darkMode ? "text-white" : "text-slate-800"}`}>Reporter Dashboard</span>
+                <span className={`font-medium text-white`}>Reporter Dashboard</span>
               </div>
-              <ChevronRight size={18} className={darkMode ? "text-slate-500" : "text-slate-400"} />
+              <ChevronRight size={18} className={darkMode ? "text-[#737373]" : "text-[#a3a3a3]"} />
             </button>
           )}
 
@@ -118,13 +118,13 @@ export default function ProfilePage() {
             <button
               data-testid="admin-panel-profile"
               onClick={() => navigate("/admin")}
-              className={`w-full px-4 py-3.5 flex items-center justify-between border-b ${darkMode ? "border-slate-700 hover:bg-slate-700" : "border-slate-100 hover:bg-slate-50"} transition-colors`}
+              className={`w-full px-4 py-3.5 flex items-center justify-between border-b border-[#1f1f1f] hover:bg-[#1a1a1a] transition-colors`}
             >
               <div className="flex items-center gap-3">
-                <Shield size={20} className="text-orange-500" />
-                <span className={`font-medium ${darkMode ? "text-white" : "text-slate-800"}`}>Admin Panel</span>
+                <Shield size={20} className="text-[#7c3aed]" />
+                <span className={`font-medium text-white`}>Admin Panel</span>
               </div>
-              <ChevronRight size={18} className={darkMode ? "text-slate-500" : "text-slate-400"} />
+              <ChevronRight size={18} className={darkMode ? "text-[#737373]" : "text-[#a3a3a3]"} />
             </button>
           )}
 
@@ -132,7 +132,7 @@ export default function ProfilePage() {
             <button
               data-testid="logout-profile"
               onClick={handleLogout}
-              className={`w-full px-4 py-3.5 flex items-center justify-between ${darkMode ? "hover:bg-slate-700" : "hover:bg-slate-50"} transition-colors`}
+              className={`w-full px-4 py-3.5 flex items-center justify-between hover:bg-[#1a1a1a] transition-colors`}
             >
               <div className="flex items-center gap-3">
                 <LogOut size={20} className="text-red-500" />
@@ -145,7 +145,7 @@ export default function ProfilePage() {
         {/* App Info */}
         <div className="text-center py-4">
           <img src=""  className="h-8 w-auto mx-auto mb-2 opacity-50" />
-          <p className={`text-xs ${darkMode ? "text-slate-600" : "text-slate-400"}`}>
+          <p className={`text-xs text-[#404040]`}>
             LaunchCode v1.0
           </p>
         </div>

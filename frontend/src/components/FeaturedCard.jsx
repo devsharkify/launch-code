@@ -35,8 +35,8 @@ export const FeaturedCard = ({ article }) => {
         {article.is_pinned && (
           <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#7c3aed] text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
             <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d0d0d] opacity-60" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0d0d0d]" />
             </span>
             Top Story
           </div>

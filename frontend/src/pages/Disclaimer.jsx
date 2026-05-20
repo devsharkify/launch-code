@@ -47,7 +47,7 @@ export default function Disclaimer() {
   const navigate = useNavigate();
 
   return (
-    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-[#f0f0f0]" : "bg-white text-[#f0f0f0]"}`}>
+    <div className={`min-h-screen ${darkMode ? "bg-[#1C1410] text-[#f0f0f0]" : "bg-[#0d0d0d] text-[#f0f0f0]"}`}>
       <div className="max-w-3xl mx-auto px-4 py-10">
 
         {/* Breadcrumb */}

@@ -89,7 +89,7 @@ export default function LiveTV() {
                     className="w-full h-full object-cover brightness-75"
                   />
                   <div className="absolute top-2 left-2 flex items-center gap-1 px-1.5 py-0.5 bg-[#ef4444] rounded text-white text-[10px] font-bold">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" /> LIVE
+                    <div className="w-1.5 h-1.5 bg-[#0d0d0d] rounded-full animate-pulse" /> LIVE
                   </div>
                 </div>
                 <div className="p-2">

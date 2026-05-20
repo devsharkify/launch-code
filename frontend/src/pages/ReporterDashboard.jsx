@@ -175,7 +175,7 @@ export default function ReporterDashboard() {
   return (
     <div data-testid="reporter-dashboard-page" className={`min-h-screen ${darkMode ? "bg-[#080808]" : "bg-[#111]"}`}>
       {/* Header */}
-      <div className={`border-b py-4 px-4 ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+      <div className={`border-b py-4 px-4 ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Button
@@ -250,19 +250,19 @@ export default function ReporterDashboard() {
         {/* Stats */}
         {reporter.status === "approved" && (
           <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
               <p className="text-2xl font-bold text-[#7c3aed]">{reporter.news_submitted}</p>
               <p className={`text-sm ${darkMode ? "text-[#555]" : "text-[#737373]"}`}>
                 Submitted
               </p>
             </div>
-            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
               <p className="text-2xl font-bold text-green-600">{reporter.news_approved}</p>
               <p className={`text-sm ${darkMode ? "text-[#555]" : "text-[#737373]"}`}>
                 Approved
               </p>
             </div>
-            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+            <div className={`p-4 rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
               <p className="text-2xl font-bold text-purple-600">
                 {reporter.news_submitted > 0 ? Math.round((reporter.news_approved / reporter.news_submitted) * 100) : 0}%
               </p>
@@ -297,7 +297,7 @@ export default function ReporterDashboard() {
         )}
 
         {/* News List */}
-        <div className={`rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-white border-[#1f1f1f]"}`}>
+        <div className={`rounded-lg border ${darkMode ? "bg-[#0d0d0d] border-[#1f1f1f]" : "bg-[#0d0d0d] border-[#1f1f1f]"}`}>
           <div className="p-4 border-b border-[#1f1f1f] dark:border-[#1f1f1f]">
             <h2 className={`font-semibold ${"text-[#f0f0f0]"}`}>
               Your Submissions

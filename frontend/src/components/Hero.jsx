@@ -115,17 +115,24 @@ export const Hero = () => {
         {/* CTAs */}
         <div className="flex flex-wrap items-center gap-3 mb-10">
           <button
-            onClick={() => navigate("/startup-apply")}
+            onClick={() => navigate("/launches")}
             className="inline-flex items-center gap-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-5 py-2.5 rounded-lg text-[14px] font-semibold transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.5)] active:scale-95"
           >
-            Submit Your Startup
-            <ArrowRight size={15} />
+            <Zap size={14} fill="white" />
+            Launch Radar
+          </button>
+          <button
+            onClick={() => navigate("/models")}
+            className="inline-flex items-center gap-2 bg-[#111] border border-[#262626] hover:border-[#7c3aed]/40 text-[#a3a3a3] hover:text-[#f0f0f0] px-5 py-2.5 rounded-lg text-[14px] font-medium transition-all"
+          >
+            Model Leaderboard
+            <ArrowRight size={14} />
           </button>
           <button
             onClick={() => document.getElementById("feed")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex items-center gap-2 bg-[#111] border border-[#262626] hover:border-[#404040] text-[#a3a3a3] hover:text-[#f0f0f0] px-5 py-2.5 rounded-lg text-[14px] font-medium transition-all"
+            className="text-[13px] text-[#404040] hover:text-[#737373] transition-colors"
           >
-            Explore the Feed
+            Read the feed ↓
           </button>
         </div>
 
