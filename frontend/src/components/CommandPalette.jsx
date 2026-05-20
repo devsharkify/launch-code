@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, ArrowRight, Cpu, DollarSign, Video, Zap, BookOpen, X } from "lucide-react";
+import { Search, ArrowRight, Cpu, DollarSign, Video, Zap, BookOpen, X, Newspaper } from "lucide-react";
 import { AppContext } from "../App";
 
 const QUICK_LINKS = [
@@ -9,6 +9,7 @@ const QUICK_LINKS = [
   { icon: DollarSign, label: "Funding Wire", sub: "$4.2B tracked · 15 rounds in 2026", path: "/funding" },
   { icon: Video, label: "Video AI", sub: "Runway, Pika, Sora, Veo — all coverage", path: "/?cat=video-ai" },
   { icon: BookOpen, label: "Research", sub: "Papers, benchmarks, arxiv breakdowns", path: "/?cat=research" },
+  { icon: Newspaper, label: "Daily Digest", sub: "Today's AI briefing — issue #847", path: "/digest" },
 ];
 
 export const CommandPalette = ({ open, onClose }) => {

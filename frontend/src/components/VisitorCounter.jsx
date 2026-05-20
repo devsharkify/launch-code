@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import { AppContext } from "../App";
+import { useState, useEffect } from "react";
 import { Eye } from "lucide-react";
 
 /**
@@ -47,7 +46,6 @@ function formatCount(num) {
 }
 
 export const VisitorCounter = () => {
-  const { darkMode } = useContext(AppContext);
   const [count, setCount] = useState(getMockedVisitors);
 
   useEffect(() => {

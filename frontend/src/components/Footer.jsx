@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Twitter, Linkedin, Github, Youtube, Zap } from "lucide-react";
 
 const COVERAGE = [
+  { label: "Daily Digest", href: "/digest" },
   { label: "Launch Radar", href: "/launches" },
   { label: "AI Models", href: "/models" },
   { label: "Funding Wire", href: "/funding" },
