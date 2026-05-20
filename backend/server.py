@@ -88,6 +88,27 @@ async def start_scraper():
     except Exception as e:
         print(f"Index creation: {e}")
 
+    # Seed the news collection from backend/seed_articles.py on first boot
+    try:
+        existing = await db.news.count_documents({})
+        if existing == 0:
+            from seed_articles import SEED_ARTICLES
+            from datetime import datetime, timezone
+            docs = []
+            for a in SEED_ARTICLES:
+                d = dict(a)
+                d.setdefault("is_active", True)
+                d.setdefault("content_type", "text")
+                d.setdefault("created_at", datetime.now(timezone.utc).isoformat())
+                d.setdefault("updated_at", datetime.now(timezone.utc).isoformat())
+                docs.append(d)
+            await db.news.insert_many(docs)
+            print(f"Seeded {len(docs)} articles into db.news")
+        else:
+            print(f"db.news already has {existing} articles; skipping seed")
+    except Exception as e:
+        print(f"Seed-on-boot failed: {e}")
+
     asyncio.create_task(scraper_loop())
     try:
         from routes.seo_engine import generate_static_seo_files

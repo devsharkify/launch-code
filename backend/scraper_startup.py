@@ -1,11 +1,15 @@
-import asyncio, calendar, email.utils, uuid
+import asyncio, calendar, email.utils, os, uuid
 from datetime import datetime, timezone
+from pathlib import Path
 import feedparser, aiohttp
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 
-MONGO_URL = "mongodb+srv://admin:ak09tKmeXt1zM8AN@mint-street.teugymk.mongodb.net/?retryWrites=true&w=majority&appName=mint-street"
-DB_NAME = "mint_street"
+load_dotenv(Path(__file__).parent / ".env")
+
+MONGO_URL = os.environ["MONGO_URL"]
+DB_NAME = os.environ.get("DB_NAME", "mint_street")
 CUTOFF = datetime(2026, 2, 19, tzinfo=timezone.utc)
 TARGET = 300
 HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
